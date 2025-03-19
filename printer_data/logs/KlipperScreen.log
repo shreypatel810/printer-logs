@@ -59605,3 +59605,187 @@ NoneType: None
 Starting WiFi Association
 2025-03-19 14:48:34,784 [screen.py:show_popup_message()] - echo: Pixelsat
 Starting WiFi Association
+2025-03-19 14:37:03,005 [functions.py:log_start()] - --------------------KlipperScreen Log Start--------------------
+2025-03-19 14:37:03,005 [functions.py:log_start()] - KlipperScreen Version: v0.4.5-10-43ad9fc6-dirty
+2025-03-19 14:37:03,005 [functions.py:log_start()] - Python version: 3.9
+2025-03-19 14:37:03,143 [config.py:get_config_file_location()] - Passed config (-c): .
+2025-03-19 14:37:03,143 [config.py:__init__()] - Config path location: /home/om/printer_data/config/KlipperScreen.conf
+2025-03-19 14:37:03,146 [config.py:_include_config()] - Parsing files: ['/home/om/KlipperScreen/config/main_menu.conf']
+2025-03-19 14:37:03,155 [config.py:_include_config()] - Parsing files: ['/home/om/KlipperScreen/config/splash_menu.conf']
+2025-03-19 14:37:03,158 [config.py:_include_config()] - Parsing files: ['/home/om/KlipperScreen/config/print_menu.conf']
+2025-03-19 14:37:03,163 [config.py:_include_config()] - Parsing files: ['/home/om/KlipperScreen/config/move_menu.conf']
+2025-03-19 14:37:03,171 [config.py:log_config()] - ===== Config File =====
+
+=======================
+2025-03-19 14:37:03,172 [config.py:__init__()] - ====== Saved Def ======
+
+[main]
+theme = Go3D
+
+=======================
+2025-03-19 14:37:03,172 [config.py:__init__()] - Configured printers: [
+  {
+    "Printer": {
+      "moonraker_host": "127.0.0.1",
+      "moonraker_port": "7125",
+      "moonraker_path": "",
+      "moonraker_ssl": null,
+      "moonraker_api_key": ""
+    }
+  }
+]
+2025-03-19 14:37:03,269 [config.py:create_translations()] - Selected lang: system_lang OS lang: en_GB
+2025-03-19 14:37:03,269 [config.py:install_language()] - Using lang en
+2025-03-19 14:37:03,281 [screen.py:__init__()] - Display for xset: :0
+2025-03-19 14:37:03,283 [screen.py:__init__()] - Screen 0: 800x480
+2025-03-19 14:37:03,283 [screen.py:__init__()] - Monitors: 1 using number: 0
+2025-03-19 14:37:03,283 [screen.py:__init__()] - Wayland: False Display name: :0
+2025-03-19 14:37:03,284 [screen.py:__init__()] - Screen resolution: 800x480
+2025-03-19 14:37:03,405 [KlippyGtk.py:__init__()] - Font size: 17.8 (medium)
+2025-03-19 14:37:03,617 [base_panel.py:battery_percentage()] - Battery information not available.
+2025-03-19 14:37:03,719 [screen.py:set_screenblanking_timeout()] - Changing screen blanking to: 3600
+2025-03-19 14:37:03,728 [screen.py:set_screenblanking_timeout()] - Using DPMS
+2025-03-19 14:37:03,735 [screen.py:initial_connection()] - Default printer: None
+2025-03-19 14:37:03,771 [screen.py:connect_printer()] - Connecting to printer: Printer
+2025-03-19 14:37:03,771 [screen.py:_remove_all_panels()] - Removing all panels
+2025-03-19 14:37:03,802 [screen.py:_load_panel()] - Loading panel: splash_screen
+2025-03-19 14:37:03,837 [screen.py:attach_panel()] - Current panel hierarchy: splash_screen
+2025-03-19 14:37:03,860 [KlippyWebsocket.py:connect()] - Attempting to connect
+2025-03-19 14:37:03,860 [KlippyWebsocket.py:connect()] - Starting websocket thread
+2025-03-19 14:37:03,871 [_logging.py:info()] - Websocket connected
+2025-03-19 14:37:03,871 [KlippyWebsocket.py:on_open()] - Moonraker Websocket Open
+2025-03-19 14:37:03,874 [screen.py:websocket_connected()] - ### websocket_connected
+2025-03-19 14:37:03,905 [KlippyWebsocket.py:identify_client()] - Sending server.connection.identify
+2025-03-19 14:37:03,919 [printer.py:configure_cameras()] - Cameras: []
+2025-03-19 14:37:03,927 [screen.py:init_klipper()] - Moonraker info {'klippy_connected': True, 'klippy_state': 'ready', 'components': ['secrets', 'template', 'klippy_connection', 'jsonrpc', 'internal_transport', 'application', 'websockets', 'dbus_manager', 'database', 'file_manager', 'klippy_apis', 'shell_command', 'machine', 'data_store', 'proc_stats', 'job_state', 'job_queue', 'http_client', 'announcements', 'webcam', 'extensions', 'history', 'octoprint_compat', 'authorization'], 'failed_components': [], 'registered_directories': ['config', 'logs', 'gcodes', 'config_examples', 'docs'], 'warnings': [], 'websocket_count': 1, 'moonraker_version': 'v0.8.0-268-ga23187b', 'missing_klippy_requirements': [], 'api_version': [1, 4, 0], 'api_version_string': '1.4.0'}
+2025-03-19 14:37:04,180 [printer.py:log_counts()] - Klipper version: v0.12.0-85-gd785b396a-dirty
+2025-03-19 14:37:04,180 [printer.py:log_counts()] - # Extruders: 1
+2025-03-19 14:37:04,180 [printer.py:log_counts()] - # Temperature devices: 1
+2025-03-19 14:37:04,180 [printer.py:log_counts()] - # Fans: 1
+2025-03-19 14:37:04,180 [printer.py:log_counts()] - # Output pins: 1
+2025-03-19 14:37:04,180 [printer.py:log_counts()] - # PWM tools: 0
+2025-03-19 14:37:04,180 [printer.py:log_counts()] - # Leds: 0
+2025-03-19 14:37:04,434 [KlippyWebsocket.py:object_subscription()] - Sending printer.objects.subscribe
+2025-03-19 14:37:04,435 [files.py:set_gcodes_path()] - Gcodes path: /home/om/printer_data/gcodes
+2025-03-19 14:37:04,435 [screen.py:init_klipper()] - Printer initialized
+2025-03-19 14:37:04,435 [printer.py:change_state()] - Changing state from 'disconnected' to 'ready'
+2025-03-19 14:37:04,436 [printer.py:change_state()] - Adding callback for state: ready
+2025-03-19 14:37:04,518 [screen.py:set_screenblanking_timeout()] - Changing screen blanking to: 3600
+2025-03-19 14:37:04,527 [screen.py:set_screenblanking_timeout()] - Using DPMS
+2025-03-19 14:37:04,533 [KlippyWebsocket.py:get_file_list()] - Sending server.files.list
+2025-03-19 14:37:04,536 [screen.py:_remove_all_panels()] - Removing all panels
+2025-03-19 14:37:04,573 [screen.py:_load_panel()] - Loading panel: main_menu
+2025-03-19 14:37:04,705 [main_menu.py:__init__()] - ### Making MainMenu
+2025-03-19 14:37:04,710 [main_menu.py:add_device()] - Adding device: extruder
+2025-03-19 14:37:04,716 [main_menu.py:add_device()] - Adding device: heater_bed
+2025-03-19 14:37:04,745 [menu.py:arrangeMenuItems()] - X > gcodes
+2025-03-19 14:37:04,754 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-19 14:37:04,770 [printer.py:init_temp_store()] - Temp store: ['heater_bed', 'extruder']
+2025-03-19 14:37:04,779 [screen.py:init_tempstore()] - Temperature store size: 1200
+2025-03-19 14:37:10,151 [screen.py:_go_to_submenu()] - #### Go to submenu more
+2025-03-19 14:37:10,152 [screen.py:_go_to_submenu()] - #### Menu __main
+2025-03-19 14:37:10,155 [screen.py:_load_panel()] - Loading panel: menu
+2025-03-19 14:37:10,192 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-19 14:37:10,335 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more
+2025-03-19 14:37:10,339 [menu.py:arrangeMenuItems()] - X > more bedlevel
+2025-03-19 14:37:10,348 [menu.py:arrangeMenuItems()] - X > more led
+2025-03-19 14:37:10,357 [menu.py:arrangeMenuItems()] - X > more power
+2025-03-19 14:37:10,360 [menu.py:arrangeMenuItems()] - X > more camera
+2025-03-19 14:37:10,373 [menu.py:arrangeMenuItems()] - X > more spoolman
+2025-03-19 14:37:10,373 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-19 14:37:10,383 [screen.py:_go_to_submenu()] - menu, {{ gettext('More') }}, panel_name=more, items=[{'more bedlevel': {'name': "{{ gettext('Bed Level') }}", 'icon': 'bed-level', 'panel': 'bed_level', 'method': None, 'confirm': None, 'enable': "{{ 'bed_screws' in printer.config_sections or 'screws_tilt_adjust' in printer.config_sections }}", 'params': '{}', 'style': None, 'active': None}}, {'more zoffset': {'name': "{{ gettext('Z Calibrate') }}", 'icon': 'z-farther', 'panel': 'zcalibrate', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more limits': {'name': "{{ gettext('Limits') }}", 'icon': 'fine-tune', 'panel': 'limits', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more fan': {'name': "{{ gettext('Fan') }}", 'icon': 'fan', 'panel': 'fan', 'method': None, 'confirm': None, 'enable': '{{ printer.fans.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more led': {'name': "{{ gettext('Leds') }}", 'icon': 'light', 'panel': 'led', 'method': None, 'confirm': None, 'enable': '{{ printer.leds.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more macros': {'name': "{{ gettext('Macros') }}", 'icon': 'custom-script', 'panel': 'gcode_macros', 'method': None, 'confirm': None, 'enable': '{{ printer.gcode_macros.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more pins': {'name': "{{ gettext('Pins') }}", 'icon': 'hashtag', 'panel': 'pins', 'method': None, 'confirm': None, 'enable': '{{ printer.output_pins.count > 0 or printer.pwm_tools.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more power': {'name': "{{ gettext('Power') }}", 'icon': 'shutdown', 'panel': 'power', 'method': None, 'confirm': None, 'enable': '{{ moonraker.power_devices.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more camera': {'name': "{{ gettext('Camera') }}", 'icon': 'camera', 'panel': 'camera', 'method': None, 'confirm': None, 'enable': '{{ moonraker.cameras.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more console': {'name': "{{ gettext('Console') }}", 'icon': 'console', 'panel': 'console', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more updater': {'name': "{{ gettext('Update') }}", 'icon': 'refresh', 'panel': 'updater', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more input_shaper': {'name': "{{ gettext('Input Shaper') }}", 'icon': 'move', 'panel': 'input_shaper', 'method': None, 'confirm': None, 'enable': "{{ 'input_shaper' in printer.config_sections }}", 'params': '{}', 'style': None, 'active': None}}, {'more save': {'name': "{{ gettext('Save Config') }}", 'icon': 'complete', 'panel': None, 'method': 'printer.gcode.script', 'confirm': "\n{{ gettext('Save configuration?') }}\n\n{{ gettext('Klipper will reboot') }}", 'enable': 'True', 'params': '{"script":"SAVE_CONFIG"}', 'style': None, 'active': None}}, {'more settings': {'name': 'KlipperScreen', 'icon': 'settings', 'panel': 'settings', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more network': {'name': "{{ gettext('Network') }}", 'icon': 'network', 'panel': 'network', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more notifications': {'name': "{{ gettext('Notifications') }}", 'icon': 'notifications', 'panel': 'notifications', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more spoolman': {'name': 'Spoolman', 'icon': 'spoolman', 'panel': 'spoolman', 'method': None, 'confirm': None, 'enable': '{{ moonraker.spoolman }}', 'params': '{}', 'style': None, 'active': None}}, {'more system': {'name': "{{ gettext('System') }}", 'icon': 'info', 'panel': 'system', 'method': None, 'confirm': None, 'enable': '{{ moonraker_connected }}', 'params': '{}', 'style': None, 'active': None}}]
+2025-03-19 14:37:12,026 [screen.py:_load_panel()] - Loading panel: network
+2025-03-19 14:37:12,447 [network.py:__init__()] - Network interfaces: ['lo', 'eth0', 'wlan0', 'p2p-dev-wlan0']
+2025-03-19 14:37:12,454 [network.py:__init__()] - Wireless interfaces: ['wlan0']
+2025-03-19 14:37:12,455 [network.py:__init__()] - Primary interface: wlan0
+2025-03-19 14:37:12,481 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more > network
+2025-03-19 14:37:13,849 [sdbus_nm.py:monitor_connection_status()] - State changed: 50 (50, 0)
+2025-03-19 14:37:13,849 [sdbus_nm.py:monitor_connection_status()] - Starting to monitor state
+2025-03-19 14:37:38,396 [sdbus_nm.py:monitor_connection_status()] - State changed: 120 (120, 7)
+2025-03-19 14:37:38,400 [screen.py:show_popup_message()] - error: Connection failed
+2025-03-19 14:37:38,850 [sdbus_nm.py:monitor_connection_status()] - State changed: 30 (30, 0)
+2025-03-19 14:37:38,853 [screen.py:show_popup_message()] - error: Network disconnected
+2025-03-19 14:38:03,846 [base_panel.py:battery_percentage()] - Battery information not available.
+2025-03-19 14:38:06,541 [KlippyGtk.py:Dialog()] - Showing dialog Remove network (width=800, height=480)
+2025-03-19 14:38:07,963 [KlippyGtk.py:remove_dialog()] - Removing Dialog
+2025-03-19 14:38:08,037 [network.py:confirm_removal()] - Deleting Pixelsat
+2025-03-19 14:38:08,048 [sdbus_nm.py:delete_connection_path()] - Deleted connection path: /org/freedesktop/NetworkManager/Settings/3
+2025-03-19 14:38:43,720 [network.py:add_new_network()] - phase2='MSCHAPV2'
+2025-03-19 14:38:43,720 [network.py:add_new_network()] - eap_method='PEAP'
+2025-03-19 14:38:43,771 [sdbus_nm.py:add_network()] - Adding network of type: AES WPA-PSK
+2025-03-19 14:38:44,333 [functions.py:logging_exception_handler()] - Uncaught exception <class 'sdbus.dbus_exceptions.DbusUnknownMethodError'>: No such interface “org.freedesktop.DBus.Properties” on object at path /org/freedesktop/NetworkManager/AccessPoint/13
+  File "/home/om/KlipperScreen/panels/network.py", line 212, in add_new_network
+    self.connect_network(widget, ssid, showadd=False)
+
+  File "/home/om/KlipperScreen/panels/network.py", line 253, in connect_network
+    bssid = self.sdbus_nm.get_bssid_from_ssid(ssid)
+
+  File "/home/om/KlipperScreen/ks_includes/sdbus_nm.py", line 198, in get_bssid_from_ssid
+    return next(net["BSSID"] for net in self.get_networks() if ssid == net["SSID"])
+
+  File "/home/om/KlipperScreen/ks_includes/sdbus_nm.py", line 178, in get_networks
+    networks.extend(
+
+  File "/home/om/KlipperScreen/ks_includes/sdbus_nm.py", line 180, in <genexpr>
+    "SSID": ap.ssid.decode("utf-8"),
+
+  File "/home/om/.KlipperScreen-env/lib/python3.9/site-packages/sdbus/dbus_proxy_sync_property.py", line 89, in __get__
+    reply_message = obj._attached_bus. \
+NoneType: None
+2025-03-19 14:38:49,873 [network.py:add_new_network()] - phase2='MSCHAPV2'
+2025-03-19 14:38:49,873 [network.py:add_new_network()] - eap_method='PEAP'
+2025-03-19 14:38:49,977 [sdbus_nm.py:add_network()] - Adding network of type: AES WPA-PSK
+2025-03-19 14:38:50,016 [sdbus_nm.py:delete_connection_path()] - Deleted connection path: /org/freedesktop/NetworkManager/Settings/7
+2025-03-19 14:38:50,643 [functions.py:logging_exception_handler()] - Uncaught exception <class 'sdbus.dbus_exceptions.DbusUnknownMethodError'>: No such interface “org.freedesktop.DBus.Properties” on object at path /org/freedesktop/NetworkManager/AccessPoint/16
+  File "/home/om/KlipperScreen/panels/network.py", line 212, in add_new_network
+    self.connect_network(widget, ssid, showadd=False)
+
+  File "/home/om/KlipperScreen/panels/network.py", line 253, in connect_network
+    bssid = self.sdbus_nm.get_bssid_from_ssid(ssid)
+
+  File "/home/om/KlipperScreen/ks_includes/sdbus_nm.py", line 198, in get_bssid_from_ssid
+    return next(net["BSSID"] for net in self.get_networks() if ssid == net["SSID"])
+
+  File "/home/om/KlipperScreen/ks_includes/sdbus_nm.py", line 178, in get_networks
+    networks.extend(
+
+  File "/home/om/KlipperScreen/ks_includes/sdbus_nm.py", line 186, in <genexpr>
+    "channel": WifiChannels(ap.frequency)[1],
+
+  File "/home/om/.KlipperScreen-env/lib/python3.9/site-packages/sdbus/dbus_proxy_sync_property.py", line 89, in __get__
+    reply_message = obj._attached_bus. \
+NoneType: None
+2025-03-19 14:40:04,623 [screen.py:show_popup_message()] - echo: Pixelsat
+Starting WiFi Association
+2025-03-19 14:40:53,964 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-19 14:40:53,993 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more
+2025-03-19 14:40:54,003 [menu.py:arrangeMenuItems()] - X > more bedlevel
+2025-03-19 14:40:54,016 [menu.py:arrangeMenuItems()] - X > more led
+2025-03-19 14:40:54,030 [menu.py:arrangeMenuItems()] - X > more power
+2025-03-19 14:40:54,034 [menu.py:arrangeMenuItems()] - X > more camera
+2025-03-19 14:40:54,052 [menu.py:arrangeMenuItems()] - X > more spoolman
+2025-03-19 14:40:54,052 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-19 14:42:05,685 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more > network
+2025-03-19 14:42:08,389 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-19 14:42:08,407 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more
+2025-03-19 14:42:08,413 [menu.py:arrangeMenuItems()] - X > more bedlevel
+2025-03-19 14:42:08,422 [menu.py:arrangeMenuItems()] - X > more led
+2025-03-19 14:42:08,431 [menu.py:arrangeMenuItems()] - X > more power
+2025-03-19 14:42:08,434 [menu.py:arrangeMenuItems()] - X > more camera
+2025-03-19 14:42:08,447 [menu.py:arrangeMenuItems()] - X > more spoolman
+2025-03-19 14:42:08,447 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-19 14:42:09,668 [screen.py:_load_panel()] - Loading panel: system
+2025-03-19 14:42:09,672 [system.py:__init__()] - {'python': {'version': [3, 9, 2, 'final', 0], 'version_string': '3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]'}, 'cpu_info': {'cpu_count': 4, 'bits': '64bit', 'processor': 'aarch64', 'cpu_desc': '', 'serial_number': '10000000f1b1a7a1', 'hardware_desc': 'BCM2835', 'model': 'Raspberry Pi 4 Model B Rev 1.5', 'total_memory': 1713720, 'memory_units': 'kB'}, 'sd_info': {'manufacturer_id': '03', 'manufacturer': 'Sandisk', 'oem_id': '5344', 'product_name': 'SK32G', 'product_revision': '8.5', 'serial_number': '83e73683', 'manufacturer_date': '6/2024', 'capacity': '29.7 GiB', 'total_bytes': 31914983424}, 'distribution': {'name': 'Debian GNU/Linux 11 (bullseye)', 'id': 'debian', 'version': '11', 'version_parts': {'major': '11', 'minor': '', 'build_number': ''}, 'like': '', 'codename': 'bullseye', 'release_info': {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}}, 'virtualization': {'virt_type': 'none', 'virt_identifier': 'none'}, 'network': {}, 'canbus': {}, 'provider': 'systemd_dbus', 'available_services': ['klipper-mcu', 'sonar', 'moonraker', 'klipper', 'KlipperScreen', 'crowsnest', 'klipper-backup-on-boot'], 'service_state': {'klipper-mcu': {'active_state': 'active', 'sub_state': 'running'}, 'sonar': {'active_state': 'inactive', 'sub_state': 'dead'}, 'moonraker': {'active_state': 'active', 'sub_state': 'running'}, 'klipper': {'active_state': 'active', 'sub_state': 'running'}, 'KlipperScreen': {'active_state': 'active', 'sub_state': 'running'}, 'crowsnest': {'active_state': 'activating', 'sub_state': 'auto-restart'}, 'klipper-backup-on-boot': {'active_state': 'activating', 'sub_state': 'start'}}, 'instance_ids': {'moonraker': 'moonraker', 'klipper': 'klipper'}}
+2025-03-19 14:42:09,690 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more > system
+2025-03-19 14:42:17,119 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-19 14:42:17,137 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more
+2025-03-19 14:42:17,145 [menu.py:arrangeMenuItems()] - X > more bedlevel
+2025-03-19 14:42:17,153 [menu.py:arrangeMenuItems()] - X > more led
+2025-03-19 14:42:17,163 [menu.py:arrangeMenuItems()] - X > more power
+2025-03-19 14:42:17,166 [menu.py:arrangeMenuItems()] - X > more camera
+2025-03-19 14:42:17,180 [menu.py:arrangeMenuItems()] - X > more spoolman
+2025-03-19 14:42:17,180 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-19 14:42:23,440 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more > network
+2025-03-19 14:45:25,317 [screen.py:show_popup_message()] - echo: Pixelsat
+Starting WiFi Association
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
