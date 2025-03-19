@@ -1523,3 +1523,241 @@ Properties:
 2025-03-19 14:36:07,031 [klippy_connection.py:_check_ready()] - Klippy ready
 2025-03-19 14:36:07,522 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
 2025-03-19 14:36:07,914 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-19 14:36:09,658 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
+2025-03-19 14:36:09,670 [application.py:log_request()] - 101 GET /websocket?token= (127.0.0.1) [_TRUSTED_USER_] 2.04ms
+2025-03-19 14:36:09,671 [websockets.py:open()] - Websocket Opened: ID: 548562270576, Proxied: False, User Agent: , Host Name: 127.0.0.1
+2025-03-19 14:36:09,780 [websockets.py:_handle_identify()] - Websocket 548562270576 Client Identified - Name: KlipperScreen, Version: v0.4.5-10-43ad9fc6-dirty, Type: display
+2025-03-19 14:36:09,930 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-19 14:36:10,316 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2025-03-19 14:36:11,945 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+-------------------- Log Start | Wed Mar 19 09:05:55 2025 --------------------
+data_path: /home/om/printer_data
+is_default_data_path: False
+config_file: /home/om/printer_data/config/moonraker.conf
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: True
+instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
+unix_socket_path: /home/om/printer_data/comms/moonraker.sock
+software_version: v0.8.0-268-ga23187b
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/om/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
+msgspec_enabled: False
+uvloop_enabled: False
+2025-03-19 14:35:55,090 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
+2025-03-19 14:35:55,091 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+max_upload_size = 1024
+klippy_uds_address = ~/printer_data/comms/klippy.sock
+
+[file_manager]
+enable_object_processing = False
+
+[authorization]
+cors_domains = 
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	http://*.local
+	http://*.lan
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+
+[octoprint_compat]
+
+[history]
+
+[announcements]
+subscriptions = 
+	mainsail
+
+#################################################################
+All Configuration Files:
+/home/om/printer_data/config/moonraker.conf
+#################################################################
+2025-03-19 14:35:55,665 [server.py:load_component()] - Component (secrets) loaded
+2025-03-19 14:35:55,693 [server.py:load_component()] - Component (template) loaded
+2025-03-19 14:35:55,704 [server.py:load_component()] - Component (klippy_connection) loaded
+2025-03-19 14:35:58,278 [server.py:load_component()] - Component (application) loaded
+2025-03-19 14:35:58,438 [server.py:load_component()] - Component (websockets) loaded
+2025-03-19 14:35:58,958 [server.py:load_component()] - Component (dbus_manager) loaded
+2025-03-19 14:35:59,117 [server.py:add_log_rollover_item()] - 
+Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
+Unsafe Shutdown Count: 57
+2025-03-19 14:35:59,198 [server.py:load_component()] - Component (database) loaded
+2025-03-19 14:35:59,342 [file_manager.py:__init__()] - Using File System Observer: inotify
+2025-03-19 14:35:59,483 [server.py:load_component()] - Component (file_manager) loaded
+2025-03-19 14:35:59,495 [server.py:load_component()] - Component (klippy_apis) loaded
+2025-03-19 14:35:59,912 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 64bit
+  processor: aarch64
+  cpu_desc: 
+  serial_number: 10000000f1b1a7a1
+  hardware_desc: BCM2835
+  model: Raspberry Pi 4 Model B Rev 1.5
+  total_memory: 1713720
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: 03
+  manufacturer: Sandisk
+  oem_id: 5344
+  product_name: SK32G
+  product_revision: 8.5
+  serial_number: 83e73683
+  manufacturer_date: 6/2024
+  capacity: 29.7 GiB
+  total_bytes: 31914983424
+
+***distribution***
+  name: Debian GNU/Linux 11 (bullseye)
+  id: debian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bullseye
+  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+2025-03-19 14:35:59,919 [server.py:load_component()] - Component (shell_command) loaded
+2025-03-19 14:35:59,920 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2025-03-19 14:35:59,924 [server.py:load_component()] - Component (machine) loaded
+2025-03-19 14:35:59,932 [server.py:load_component()] - Component (data_store) loaded
+2025-03-19 14:35:59,952 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
+2025-03-19 14:35:59,953 [server.py:load_component()] - Component (proc_stats) loaded
+2025-03-19 14:35:59,964 [server.py:load_component()] - Component (job_state) loaded
+2025-03-19 14:35:59,971 [server.py:load_component()] - Component (job_queue) loaded
+2025-03-19 14:36:00,014 [server.py:load_component()] - Component (http_client) loaded
+2025-03-19 14:36:00,029 [server.py:load_component()] - Component (announcements) loaded
+2025-03-19 14:36:00,041 [server.py:load_component()] - Component (webcam) loaded
+2025-03-19 14:36:00,058 [server.py:load_component()] - Component (extensions) loaded
+2025-03-19 14:36:00,448 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fe80::/10
+::1/128
+CORS Domains:
+https://my\.mainsail\.xyz
+http://my\.mainsail\.xyz
+http://.*\.local
+http://.*\.lan
+2025-03-19 14:36:00,453 [server.py:load_component()] - Component (authorization) loaded
+2025-03-19 14:36:00,469 [server.py:load_component()] - Component (octoprint_compat) loaded
+2025-03-19 14:36:00,483 [server.py:load_component()] - Component (history) loaded
+2025-03-19 14:36:00,485 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2025-03-19 14:36:00,502 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
+2025-03-19 14:36:00,524 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2025-03-19 14:36:00,526 [machine.py:validation_init()] - Installation version in database up to date
+2025-03-19 14:36:03,626 [machine.py:check_virt_status()] - No Virtualization Detected
+2025-03-19 14:36:03,722 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'network-online.target', 'system.slice']
+**After=['network-online.target', 'sysinit.target', 'systemd-journald.socket', 'klipper.service', 'system.slice', 'basic.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
+**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=om
+2025-03-19 14:36:03,723 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2025-03-19 14:36:03,723 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2025-03-19 14:36:03,724 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2025-03-19 14:36:03,725 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2025-03-19 14:36:03,726 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['system.slice', 'sysinit.target', '-.mount']
+**After=['-.mount', 'system.slice', 'sysinit.target', 'klipper-mcu.service', 'network-online.target', 'basic.target', 'systemd-journald.socket']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
+**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/om/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=om
+2025-03-19 14:36:03,726 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2025-03-19 14:36:03,726 [server.py:_initialize_component()] - Performing Component Post Init: [history]
+2025-03-19 14:36:03,737 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
+2025-03-19 14:36:03,740 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
+2025-03-19 14:36:03,743 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2025-03-19 14:36:03,999 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-03-19 14:36:04,065 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', '-.mount', 'system.slice']
+**After=['klipper-mcu.service', 'basic.target', 'systemd-journald.socket', '-.mount', 'system.slice', 'network-online.target', 'sysinit.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
+**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/om/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=om
+2025-03-19 14:36:04,318 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a-dirty
+2025-03-19 14:36:04,336 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-03-19 14:36:04,338 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-03-19 14:36:04,584 [job_state.py:_handle_started()] - Job state initialized: standby
+2025-03-19 14:36:04,846 [klippy_connection.py:_check_ready()] - Klippy ready
+2025-03-19 14:36:05,336 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
+2025-03-19 14:36:05,758 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-19 14:36:07,772 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-19 14:36:09,786 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
