@@ -59409,3 +59409,9 @@ theme = Go3D
 2025-03-19 14:31:07,498 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more > network
 2025-03-19 14:31:08,687 [sdbus_nm.py:monitor_connection_status()] - State changed: 100 (100, 0)
 2025-03-19 14:31:08,687 [sdbus_nm.py:monitor_connection_status()] - Starting to monitor state
+2025-03-19 14:32:02,683 [base_panel.py:battery_percentage()] - Battery information not available.
+2025-03-19 14:36:12,563 [network.py:toggle_wifi()] - WiFi False
+2025-03-19 14:36:20,427 [network.py:toggle_wifi()] - WiFi True
+2025-03-19 14:36:20,467 [screen.py:show_popup_message()] - error: Unexpected error: Scanning not allowed while unavailable
+2025-03-19 14:36:20,481 [screen.py:show_popup_message()] - error: Unexpected error: Scanning not allowed while unavailable
+2025-03-19 14:37:47,351 [network.py:toggle_wifi()] - WiFi False
