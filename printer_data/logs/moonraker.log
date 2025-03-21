@@ -1,4 +1,4 @@
--------------------- Log Start | Wed Mar 19 06:42:59 2025 --------------------
+-------------------- Log Start | Thu Mar 20 18:36:04 2025 --------------------
 data_path: /home/om/printer_data
 is_default_data_path: False
 config_file: /home/om/printer_data/config/moonraker.conf
@@ -61,1788 +61,9 @@ All Configuration Files:
 /home/om/printer_data/config/moonraker.conf
 #################################################################
 
-Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
-Unsafe Shutdown Count: 51
-
-System Info:
-
-***python***
-  version: (3, 9, 2, 'final', 0)
-  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-
-***cpu_info***
-  cpu_count: 4
-  bits: 64bit
-  processor: aarch64
-  cpu_desc: 
-  serial_number: 10000000f1b1a7a1
-  hardware_desc: BCM2835
-  model: Raspberry Pi 4 Model B Rev 1.5
-  total_memory: 1713720
-  memory_units: kB
-
-***sd_info***
-  manufacturer_id: 03
-  manufacturer: Sandisk
-  oem_id: 5344
-  product_name: SK32G
-  product_revision: 8.5
-  serial_number: 83e73683
-  manufacturer_date: 6/2024
-  capacity: 29.7 GiB
-  total_bytes: 31914983424
-
-***distribution***
-  name: Debian GNU/Linux 11 (bullseye)
-  id: debian
-  version: 11
-  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
-  like: 
-  codename: bullseye
-  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
-
-***virtualization***
-  virt_type: none
-  virt_identifier: none
-
-***network***
-
-***canbus***
-
-***Allowed Services***
-  klipper_mcu
-  webcamd
-  MoonCord
-  KlipperScreen
-  moonraker-telegram-bot
-  moonraker-obico
-  sonar
-  crowsnest
-  octoeverywhere
-  ratos-configurator
-
-Systemd unit moonraker.service:
-unit_name: moonraker.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', 'network-online.target', 'sysinit.target']
-**After=['klipper.service', 'basic.target', 'system.slice', 'systemd-journald.socket', 'network-online.target', 'sysinit.target']
-**SupplementaryGroups=['moonraker-admin']
-**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
-**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
-**WorkingDirectory=
-**FragmentPath=/etc/systemd/system/moonraker.service
-**Description=API Server for Klipper SV1
-**User=om
-
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', '-.mount', 'sysinit.target']
-**After=['-.mount', 'klipper-mcu.service', 'basic.target', 'system.slice', 'systemd-journald.socket', 'network-online.target', 'sysinit.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-Klipper Version: v0.12.0-85-gd785b396a
-2025-03-19 12:12:59,587 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 127.0.0.1
--------------------- Log Start | Wed Mar 19 06:43:31 2025 --------------------
-data_path: /home/om/printer_data
-is_default_data_path: False
-config_file: /home/om/printer_data/config/moonraker.conf
-startup_warnings: []
-verbose: False
-debug: False
-asyncio_debug: False
-is_backup_config: False
-is_python_package: True
-instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
-unix_socket_path: /home/om/printer_data/comms/moonraker.sock
-software_version: v0.8.0-268-ga23187b
-git_branch: master
-git_remote: origin
-git_repo_url: https://github.com/Arksine/moonraker.git
-modified_files: []
-unofficial_components: []
-log_file: /home/om/printer_data/logs/moonraker.log
-python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
-msgspec_enabled: False
-uvloop_enabled: False
-2025-03-19 12:13:31,161 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
-2025-03-19 12:13:31,161 [server.py:add_log_rollover_item()] - 
-#################### Moonraker Configuration ####################
-
-[server]
-host = 0.0.0.0
-port = 7125
-max_upload_size = 1024
-klippy_uds_address = ~/printer_data/comms/klippy.sock
-
-[file_manager]
-enable_object_processing = False
-
-[authorization]
-cors_domains = 
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	http://*.local
-	http://*.lan
-trusted_clients = 
-	10.0.0.0/8
-	127.0.0.0/8
-	169.254.0.0/16
-	172.16.0.0/12
-	192.168.0.0/16
-	FE80::/10
-	::1/128
-
-[octoprint_compat]
-
-[history]
-
-[announcements]
-subscriptions = 
-	mainsail
-
-#################################################################
-All Configuration Files:
-/home/om/printer_data/config/moonraker.conf
-#################################################################
-2025-03-19 12:13:31,439 [server.py:load_component()] - Component (secrets) loaded
-2025-03-19 12:13:31,468 [server.py:load_component()] - Component (template) loaded
-2025-03-19 12:13:31,478 [server.py:load_component()] - Component (klippy_connection) loaded
-2025-03-19 12:13:32,620 [server.py:load_component()] - Component (application) loaded
-2025-03-19 12:13:32,702 [server.py:load_component()] - Component (websockets) loaded
-2025-03-19 12:13:32,850 [server.py:load_component()] - Component (dbus_manager) loaded
-2025-03-19 12:13:32,915 [server.py:add_log_rollover_item()] - 
-Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
-Unsafe Shutdown Count: 52
-2025-03-19 12:13:32,942 [server.py:load_component()] - Component (database) loaded
-2025-03-19 12:13:32,995 [file_manager.py:__init__()] - Using File System Observer: inotify
-2025-03-19 12:13:33,054 [server.py:load_component()] - Component (file_manager) loaded
-2025-03-19 12:13:33,060 [server.py:load_component()] - Component (klippy_apis) loaded
-2025-03-19 12:13:33,370 [server.py:add_log_rollover_item()] - 
-System Info:
-
-***python***
-  version: (3, 9, 2, 'final', 0)
-  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-
-***cpu_info***
-  cpu_count: 4
-  bits: 64bit
-  processor: aarch64
-  cpu_desc: 
-  serial_number: 10000000f1b1a7a1
-  hardware_desc: BCM2835
-  model: Raspberry Pi 4 Model B Rev 1.5
-  total_memory: 1713720
-  memory_units: kB
-
-***sd_info***
-  manufacturer_id: 03
-  manufacturer: Sandisk
-  oem_id: 5344
-  product_name: SK32G
-  product_revision: 8.5
-  serial_number: 83e73683
-  manufacturer_date: 6/2024
-  capacity: 29.7 GiB
-  total_bytes: 31914983424
-
-***distribution***
-  name: Debian GNU/Linux 11 (bullseye)
-  id: debian
-  version: 11
-  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
-  like: 
-  codename: bullseye
-  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
-
-***virtualization***
-  virt_type: none
-  virt_identifier: none
-
-***network***
-
-***canbus***
-
-***Allowed Services***
-  klipper_mcu
-  webcamd
-  MoonCord
-  KlipperScreen
-  moonraker-telegram-bot
-  moonraker-obico
-  sonar
-  crowsnest
-  octoeverywhere
-  ratos-configurator
-2025-03-19 12:13:33,374 [server.py:load_component()] - Component (shell_command) loaded
-2025-03-19 12:13:33,374 [machine.py:__init__()] - Using System Provider: systemd_dbus
-2025-03-19 12:13:33,379 [server.py:load_component()] - Component (machine) loaded
-2025-03-19 12:13:33,383 [server.py:load_component()] - Component (data_store) loaded
-2025-03-19 12:13:33,388 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
-2025-03-19 12:13:33,389 [server.py:load_component()] - Component (proc_stats) loaded
-2025-03-19 12:13:33,392 [server.py:load_component()] - Component (job_state) loaded
-2025-03-19 12:13:33,397 [server.py:load_component()] - Component (job_queue) loaded
-2025-03-19 12:13:33,413 [server.py:load_component()] - Component (http_client) loaded
-2025-03-19 12:13:33,419 [server.py:load_component()] - Component (announcements) loaded
-2025-03-19 12:13:33,423 [server.py:load_component()] - Component (webcam) loaded
-2025-03-19 12:13:33,427 [server.py:load_component()] - Component (extensions) loaded
-2025-03-19 12:13:33,458 [authorization.py:__init__()] - Authorization Configuration Loaded
-Trusted Clients:
-10.0.0.0/8
-127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
-192.168.0.0/16
-fe80::/10
-::1/128
-CORS Domains:
-https://my\.mainsail\.xyz
-http://my\.mainsail\.xyz
-http://.*\.local
-http://.*\.lan
-2025-03-19 12:13:33,463 [server.py:load_component()] - Component (authorization) loaded
-2025-03-19 12:13:33,471 [server.py:load_component()] - Component (octoprint_compat) loaded
-2025-03-19 12:13:33,476 [server.py:load_component()] - Component (history) loaded
-2025-03-19 12:13:33,478 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
-2025-03-19 12:13:33,492 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
-2025-03-19 12:13:33,502 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
-2025-03-19 12:13:33,503 [machine.py:validation_init()] - Installation version in database up to date
-2025-03-19 12:13:33,847 [machine.py:check_virt_status()] - No Virtualization Detected
-2025-03-19 12:13:33,861 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.123
-2025-03-19 12:13:33,864 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.123
-2025-03-19 12:13:33,924 [server.py:add_log_rollover_item()] - 
-Systemd unit moonraker.service:
-unit_name: moonraker.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', 'sysinit.target', 'network-online.target']
-**After=['sysinit.target', 'systemd-journald.socket', 'basic.target', 'system.slice', 'klipper.service', 'network-online.target']
-**SupplementaryGroups=['moonraker-admin']
-**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
-**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
-**WorkingDirectory=
-**FragmentPath=/etc/systemd/system/moonraker.service
-**Description=API Server for Klipper SV1
-**User=om
-2025-03-19 12:13:33,924 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
-2025-03-19 12:13:33,925 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
-2025-03-19 12:13:33,926 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
-2025-03-19 12:13:33,927 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.123
-2025-03-19 12:13:33,928 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
-2025-03-19 12:13:33,929 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', '-.mount', 'sysinit.target']
-**After=['-.mount', 'klipper-mcu.service', 'basic.target', 'system.slice', 'systemd-journald.socket', 'network-online.target', 'sysinit.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 12:13:33,929 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
-2025-03-19 12:13:33,929 [server.py:_initialize_component()] - Performing Component Post Init: [history]
-2025-03-19 12:13:33,941 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
-2025-03-19 12:13:33,943 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
-2025-03-19 12:13:33,945 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
-2025-03-19 12:13:34,200 [klippy_connection.py:_do_connect()] - Klippy Connection Established
-2025-03-19 12:13:34,262 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', 'sysinit.target', '-.mount']
-**After=['systemd-journald.socket', 'basic.target', 'network-online.target', '-.mount', 'klipper-mcu.service', 'system.slice', 'sysinit.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 12:13:34,518 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a
-2025-03-19 12:13:34,534 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
-2025-03-19 12:13:34,536 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
-2025-03-19 12:13:34,785 [job_state.py:_handle_started()] - Job state initialized: standby
-2025-03-19 12:13:35,045 [klippy_connection.py:_check_ready()] - Klippy ready
-2025-03-19 12:13:35,537 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
-2025-03-19 12:13:36,661 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
-2025-03-19 12:13:36,672 [application.py:log_request()] - 101 GET /websocket?token= (127.0.0.1) [_TRUSTED_USER_] 2.17ms
-2025-03-19 12:13:36,673 [websockets.py:open()] - Websocket Opened: ID: 548620778656, Proxied: False, User Agent: , Host Name: 127.0.0.1
-2025-03-19 12:13:36,708 [websockets.py:_handle_identify()] - Websocket 548620778656 Client Identified - Name: KlipperScreen, Version: v0.4.5-10-43ad9fc6-dirty, Type: display
-2025-03-19 12:13:37,149 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
-2025-03-19 14:18:25,979 [authorization.py:_prune_conn_handler()] - Trusted Connection Expired, IP: 127.0.0.1
--------------------- Log Start | Wed Mar 19 09:00:57 2025 --------------------
-data_path: /home/om/printer_data
-is_default_data_path: False
-config_file: /home/om/printer_data/config/moonraker.conf
-startup_warnings: []
-verbose: False
-debug: False
-asyncio_debug: False
-is_backup_config: False
-is_python_package: True
-instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
-unix_socket_path: /home/om/printer_data/comms/moonraker.sock
-software_version: v0.8.0-268-ga23187b
-git_branch: master
-git_remote: origin
-git_repo_url: https://github.com/Arksine/moonraker.git
-modified_files: []
-unofficial_components: []
-log_file: /home/om/printer_data/logs/moonraker.log
-python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
-msgspec_enabled: False
-uvloop_enabled: False
-2025-03-19 14:30:57,395 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
-2025-03-19 14:30:57,395 [server.py:add_log_rollover_item()] - 
-#################### Moonraker Configuration ####################
-
-[server]
-host = 0.0.0.0
-port = 7125
-max_upload_size = 1024
-klippy_uds_address = ~/printer_data/comms/klippy.sock
-
-[file_manager]
-enable_object_processing = False
-
-[authorization]
-cors_domains = 
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	http://*.local
-	http://*.lan
-trusted_clients = 
-	10.0.0.0/8
-	127.0.0.0/8
-	169.254.0.0/16
-	172.16.0.0/12
-	192.168.0.0/16
-	FE80::/10
-	::1/128
-
-[octoprint_compat]
-
-[history]
-
-[announcements]
-subscriptions = 
-	mainsail
-
-#################################################################
-All Configuration Files:
-/home/om/printer_data/config/moonraker.conf
-#################################################################
-2025-03-19 14:30:57,675 [server.py:load_component()] - Component (secrets) loaded
-2025-03-19 14:30:57,695 [server.py:load_component()] - Component (template) loaded
-2025-03-19 14:30:57,704 [server.py:load_component()] - Component (klippy_connection) loaded
-2025-03-19 14:30:58,819 [server.py:load_component()] - Component (application) loaded
-2025-03-19 14:30:58,906 [server.py:load_component()] - Component (websockets) loaded
-2025-03-19 14:30:59,080 [server.py:load_component()] - Component (dbus_manager) loaded
-2025-03-19 14:30:59,141 [server.py:add_log_rollover_item()] - 
-Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
-Unsafe Shutdown Count: 53
-2025-03-19 14:30:59,172 [server.py:load_component()] - Component (database) loaded
-2025-03-19 14:30:59,224 [file_manager.py:__init__()] - Using File System Observer: inotify
-2025-03-19 14:30:59,293 [server.py:load_component()] - Component (file_manager) loaded
-2025-03-19 14:30:59,308 [server.py:load_component()] - Component (klippy_apis) loaded
-2025-03-19 14:30:59,617 [server.py:add_log_rollover_item()] - 
-System Info:
-
-***python***
-  version: (3, 9, 2, 'final', 0)
-  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-
-***cpu_info***
-  cpu_count: 4
-  bits: 64bit
-  processor: aarch64
-  cpu_desc: 
-  serial_number: 10000000f1b1a7a1
-  hardware_desc: BCM2835
-  model: Raspberry Pi 4 Model B Rev 1.5
-  total_memory: 1713716
-  memory_units: kB
-
-***sd_info***
-  manufacturer_id: 03
-  manufacturer: Sandisk
-  oem_id: 5344
-  product_name: SK32G
-  product_revision: 8.5
-  serial_number: 83e73683
-  manufacturer_date: 6/2024
-  capacity: 29.7 GiB
-  total_bytes: 31914983424
-
-***distribution***
-  name: Debian GNU/Linux 11 (bullseye)
-  id: debian
-  version: 11
-  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
-  like: 
-  codename: bullseye
-  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
-
-***virtualization***
-  virt_type: none
-  virt_identifier: none
-
-***network***
-
-***canbus***
-
-***Allowed Services***
-  klipper_mcu
-  webcamd
-  MoonCord
-  KlipperScreen
-  moonraker-telegram-bot
-  moonraker-obico
-  sonar
-  crowsnest
-  octoeverywhere
-  ratos-configurator
-2025-03-19 14:30:59,622 [server.py:load_component()] - Component (shell_command) loaded
-2025-03-19 14:30:59,622 [machine.py:__init__()] - Using System Provider: systemd_dbus
-2025-03-19 14:30:59,629 [server.py:load_component()] - Component (machine) loaded
-2025-03-19 14:30:59,633 [server.py:load_component()] - Component (data_store) loaded
-2025-03-19 14:30:59,638 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
-2025-03-19 14:30:59,639 [server.py:load_component()] - Component (proc_stats) loaded
-2025-03-19 14:30:59,642 [server.py:load_component()] - Component (job_state) loaded
-2025-03-19 14:30:59,648 [server.py:load_component()] - Component (job_queue) loaded
-2025-03-19 14:30:59,659 [server.py:load_component()] - Component (http_client) loaded
-2025-03-19 14:30:59,666 [server.py:load_component()] - Component (announcements) loaded
-2025-03-19 14:30:59,670 [server.py:load_component()] - Component (webcam) loaded
-2025-03-19 14:30:59,674 [server.py:load_component()] - Component (extensions) loaded
-2025-03-19 14:30:59,680 [server.py:load_component()] - Component (octoprint_compat) loaded
-2025-03-19 14:30:59,686 [server.py:load_component()] - Component (history) loaded
-2025-03-19 14:30:59,720 [authorization.py:__init__()] - Authorization Configuration Loaded
-Trusted Clients:
-10.0.0.0/8
-127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
-192.168.0.0/16
-fe80::/10
-::1/128
-CORS Domains:
-https://my\.mainsail\.xyz
-http://my\.mainsail\.xyz
-http://.*\.local
-http://.*\.lan
-2025-03-19 14:30:59,724 [server.py:load_component()] - Component (authorization) loaded
-2025-03-19 14:30:59,728 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
-2025-03-19 14:30:59,740 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
-2025-03-19 14:30:59,749 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
-2025-03-19 14:30:59,749 [machine.py:validation_init()] - Installation version in database up to date
-2025-03-19 14:31:00,092 [machine.py:check_virt_status()] - No Virtualization Detected
-2025-03-19 14:31:00,108 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.123
-2025-03-19 14:31:00,111 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.123
-2025-03-19 14:31:00,172 [server.py:add_log_rollover_item()] - 
-Systemd unit moonraker.service:
-unit_name: moonraker.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['network-online.target', 'system.slice', 'sysinit.target']
-**After=['sysinit.target', 'network-online.target', 'systemd-journald.socket', 'basic.target', 'system.slice', 'klipper.service']
-**SupplementaryGroups=['moonraker-admin']
-**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
-**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
-**WorkingDirectory=
-**FragmentPath=/etc/systemd/system/moonraker.service
-**Description=API Server for Klipper SV1
-**User=om
-2025-03-19 14:31:00,172 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
-2025-03-19 14:31:00,172 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
-2025-03-19 14:31:00,178 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
-2025-03-19 14:31:00,178 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.123
-2025-03-19 14:31:00,179 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
-2025-03-19 14:31:00,180 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', 'sysinit.target', '-.mount']
-**After=['systemd-journald.socket', 'basic.target', 'network-online.target', '-.mount', 'klipper-mcu.service', 'system.slice', 'sysinit.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:31:00,180 [server.py:_initialize_component()] - Performing Component Post Init: [history]
-2025-03-19 14:31:00,182 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
-2025-03-19 14:31:00,196 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
-2025-03-19 14:31:00,197 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
-2025-03-19 14:31:00,199 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
-2025-03-19 14:31:00,451 [klippy_connection.py:_do_connect()] - Klippy Connection Established
-2025-03-19 14:31:00,514 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['sysinit.target', 'system.slice', '-.mount']
-**After=['system.slice', 'sysinit.target', 'basic.target', 'klipper-mcu.service', 'systemd-journald.socket', 'network-online.target', '-.mount']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:31:00,767 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a-dirty
-2025-03-19 14:31:00,780 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
-2025-03-19 14:31:00,782 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
-2025-03-19 14:31:01,031 [job_state.py:_handle_started()] - Job state initialized: standby
-2025-03-19 14:31:01,292 [klippy_connection.py:_check_ready()] - Klippy ready
-2025-03-19 14:31:01,783 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
-2025-03-19 14:31:02,860 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
-2025-03-19 14:31:02,871 [application.py:log_request()] - 101 GET /websocket?token= (127.0.0.1) [_TRUSTED_USER_] 3.10ms
-2025-03-19 14:31:02,872 [websockets.py:open()] - Websocket Opened: ID: 548126549280, Proxied: False, User Agent: , Host Name: 127.0.0.1
-2025-03-19 14:31:02,979 [websockets.py:_handle_identify()] - Websocket 548126549280 Client Identified - Name: KlipperScreen, Version: v0.4.5-10-43ad9fc6-dirty, Type: display
-2025-03-19 14:31:03,322 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
-2025-03-19 14:31:20,703 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9cd2e160>, <Task finished name='Task-181' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:31:27,202 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': Timeout while connecting
-2025-03-19 14:31:31,712 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9ee3df70>, <Task finished name='Task-485' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:31:32,211 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9cd2eca0>, <Task finished name='Task-640' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:31:37,215 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9cd03160>, <Task finished name='Task-778' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:31:47,718 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9cd2ed30>, <Task finished name='Task-936' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:31:53,720 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9cd033a0>, <Task finished name='Task-1245' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:31:54,213 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': Timeout while connecting
-2025-03-19 14:31:59,218 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9ee3d790>, <Task finished name='Task-1389' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:32:04,226 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9cd031f0>, <Task finished name='Task-1527' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:32:20,737 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9cd2e430>, <Task finished name='Task-1973' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:32:21,227 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': Timeout while connecting
-2025-03-19 14:35:13,794 [ioloop.py:_run_callback()] - Exception in callback functools.partial(<function _HTTPConnection.__init__.<locals>.<lambda> at 0x7f9cd03040>, <Task finished name='Task-2116' coro=<_HTTPConnection.run() done, defined at /home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py:290> exception=gaierror(-3, 'Temporary failure in name resolution')>)
-Traceback (most recent call last):
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/ioloop.py", line 750, in _run_callback
-    ret = callback()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 287, in <lambda>
-    gen.convert_yielded(self.run()), lambda f: f.result()
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/simple_httpclient.py", line 340, in run
-    stream = await self.tcp_client.connect(
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/tcpclient.py", line 269, in connect
-    addrinfo = await self.resolver.resolve(host, port, af)
-  File "/home/om/moonraker-env/lib/python3.9/site-packages/tornado/netutil.py", line 433, in resolve
-    for fam, _, _, _, address in await asyncio.get_running_loop().getaddrinfo(
-  File "/usr/lib/python3.9/asyncio/base_events.py", line 856, in getaddrinfo
-    return await self.run_in_executor(
-  File "/usr/lib/python3.9/concurrent/futures/thread.py", line 52, in run
-    result = self.fn(*self.args, **self.kwargs)
-  File "/usr/lib/python3.9/socket.py", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:13,113 [machine.py:_find_public_ip()] - Failed to detect local IP address
-2025-03-19 14:36:13,115 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://127.0.0.1
-2025-03-19 14:37:02,976 [machine.py:_find_public_ip()] - Detected Local IP: 192.168.1.123
-2025-03-19 14:37:02,978 [webcam.py:_set_default_host_ip()] - Default public webcam address set: http://192.168.1.123
-                                                                                                                                                                                                            -------------------- Log Start | Wed Mar 19 09:05:54 2025 --------------------
-data_path: /home/om/printer_data
-is_default_data_path: False
-config_file: /home/om/printer_data/config/moonraker.conf
-startup_warnings: []
-verbose: False
-debug: False
-asyncio_debug: False
-is_backup_config: False
-is_python_package: True
-instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
-unix_socket_path: /home/om/printer_data/comms/moonraker.sock
-software_version: v0.8.0-268-ga23187b
-git_branch: master
-git_remote: origin
-git_repo_url: https://github.com/Arksine/moonraker.git
-modified_files: []
-unofficial_components: []
-log_file: /home/om/printer_data/logs/moonraker.log
-python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
-msgspec_enabled: False
-uvloop_enabled: False
-2025-03-19 14:35:54,760 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
-2025-03-19 14:35:54,760 [server.py:add_log_rollover_item()] - 
-#################### Moonraker Configuration ####################
-
-[server]
-host = 0.0.0.0
-port = 7125
-max_upload_size = 1024
-klippy_uds_address = ~/printer_data/comms/klippy.sock
-
-[file_manager]
-enable_object_processing = False
-
-[authorization]
-cors_domains = 
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	http://*.local
-	http://*.lan
-trusted_clients = 
-	10.0.0.0/8
-	127.0.0.0/8
-	169.254.0.0/16
-	172.16.0.0/12
-	192.168.0.0/16
-	FE80::/10
-	::1/128
-
-[octoprint_compat]
-
-[history]
-
-[announcements]
-subscriptions = 
-	mainsail
-
-#################################################################
-All Configuration Files:
-/home/om/printer_data/config/moonraker.conf
-#################################################################
-2025-03-19 14:35:55,279 [server.py:load_component()] - Component (secrets) loaded
-2025-03-19 14:35:55,307 [server.py:load_component()] - Component (template) loaded
-2025-03-19 14:35:55,320 [server.py:load_component()] - Component (klippy_connection) loaded
-2025-03-19 14:35:57,852 [server.py:load_component()] - Component (application) loaded
-2025-03-19 14:35:57,995 [server.py:load_component()] - Component (websockets) loaded
-2025-03-19 14:35:58,544 [server.py:load_component()] - Component (dbus_manager) loaded
-2025-03-19 14:35:58,693 [server.py:add_log_rollover_item()] - 
-Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
-Unsafe Shutdown Count: 54
-2025-03-19 14:35:58,771 [server.py:load_component()] - Component (database) loaded
-2025-03-19 14:35:58,917 [file_manager.py:__init__()] - Using File System Observer: inotify
-2025-03-19 14:35:59,039 [server.py:load_component()] - Component (file_manager) loaded
-2025-03-19 14:35:59,057 [server.py:load_component()] - Component (klippy_apis) loaded
-2025-03-19 14:35:59,524 [server.py:add_log_rollover_item()] - 
-System Info:
-
-***python***
-  version: (3, 9, 2, 'final', 0)
-  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-
-***cpu_info***
-  cpu_count: 4
-  bits: 64bit
-  processor: aarch64
-  cpu_desc: 
-  serial_number: 10000000f1b1a7a1
-  hardware_desc: BCM2835
-  model: Raspberry Pi 4 Model B Rev 1.5
-  total_memory: 1713720
-  memory_units: kB
-
-***sd_info***
-  manufacturer_id: 03
-  manufacturer: Sandisk
-  oem_id: 5344
-  product_name: SK32G
-  product_revision: 8.5
-  serial_number: 83e73683
-  manufacturer_date: 6/2024
-  capacity: 29.7 GiB
-  total_bytes: 31914983424
-
-***distribution***
-  name: Debian GNU/Linux 11 (bullseye)
-  id: debian
-  version: 11
-  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
-  like: 
-  codename: bullseye
-  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
-
-***virtualization***
-  virt_type: none
-  virt_identifier: none
-
-***network***
-
-***canbus***
-
-***Allowed Services***
-  klipper_mcu
-  webcamd
-  MoonCord
-  KlipperScreen
-  moonraker-telegram-bot
-  moonraker-obico
-  sonar
-  crowsnest
-  octoeverywhere
-  ratos-configurator
-2025-03-19 14:35:59,529 [server.py:load_component()] - Component (shell_command) loaded
-2025-03-19 14:35:59,529 [machine.py:__init__()] - Using System Provider: systemd_dbus
-2025-03-19 14:35:59,535 [server.py:load_component()] - Component (machine) loaded
-2025-03-19 14:35:59,543 [server.py:load_component()] - Component (data_store) loaded
-2025-03-19 14:35:59,557 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
-2025-03-19 14:35:59,558 [server.py:load_component()] - Component (proc_stats) loaded
-2025-03-19 14:35:59,568 [server.py:load_component()] - Component (job_state) loaded
-2025-03-19 14:35:59,583 [server.py:load_component()] - Component (job_queue) loaded
-2025-03-19 14:35:59,626 [server.py:load_component()] - Component (http_client) loaded
-2025-03-19 14:35:59,639 [server.py:load_component()] - Component (announcements) loaded
-2025-03-19 14:35:59,652 [server.py:load_component()] - Component (webcam) loaded
-2025-03-19 14:35:59,666 [server.py:load_component()] - Component (extensions) loaded
-2025-03-19 14:35:59,681 [server.py:load_component()] - Component (history) loaded
-2025-03-19 14:35:59,755 [authorization.py:__init__()] - Authorization Configuration Loaded
-Trusted Clients:
-10.0.0.0/8
-127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
-192.168.0.0/16
-fe80::/10
-::1/128
-CORS Domains:
-https://my\.mainsail\.xyz
-http://my\.mainsail\.xyz
-http://.*\.local
-http://.*\.lan
-2025-03-19 14:35:59,759 [server.py:load_component()] - Component (authorization) loaded
-2025-03-19 14:35:59,772 [server.py:load_component()] - Component (octoprint_compat) loaded
-2025-03-19 14:35:59,774 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
-2025-03-19 14:35:59,790 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
-2025-03-19 14:36:00,287 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
-2025-03-19 14:36:00,287 [machine.py:validation_init()] - Installation version in database up to date
-2025-03-19 14:36:05,318 [machine.py:check_virt_status()] - No Virtualization Detected
-2025-03-19 14:36:05,413 [server.py:add_log_rollover_item()] - 
-Systemd unit moonraker.service:
-unit_name: moonraker.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['network-online.target', 'system.slice', 'sysinit.target']
-**After=['sysinit.target', 'systemd-journald.socket', 'network-online.target', 'system.slice', 'basic.target', 'klipper.service']
-**SupplementaryGroups=['moonraker-admin']
-**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
-**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
-**WorkingDirectory=
-**FragmentPath=/etc/systemd/system/moonraker.service
-**Description=API Server for Klipper SV1
-**User=om
-2025-03-19 14:36:05,414 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
-2025-03-19 14:36:05,414 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
-2025-03-19 14:36:05,417 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
-2025-03-19 14:36:05,417 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
-2025-03-19 14:36:05,418 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['sysinit.target', 'system.slice', '-.mount']
-**After=['system.slice', 'sysinit.target', 'basic.target', 'klipper-mcu.service', 'systemd-journald.socket', 'network-online.target', '-.mount']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:05,418 [server.py:_initialize_component()] - Performing Component Post Init: [history]
-2025-03-19 14:36:05,420 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
-2025-03-19 14:36:05,438 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
-2025-03-19 14:36:05,440 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
-2025-03-19 14:36:05,445 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
-2025-03-19 14:36:05,699 [klippy_connection.py:_do_connect()] - Klippy Connection Established
-2025-03-19 14:36:05,778 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['sysinit.target', 'system.slice', '-.mount']
-**After=['systemd-journald.socket', 'system.slice', '-.mount', 'network-online.target', 'klipper-mcu.service', 'sysinit.target', 'basic.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:06,032 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a-dirty
-2025-03-19 14:36:06,054 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
-2025-03-19 14:36:06,057 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
-2025-03-19 14:36:06,304 [job_state.py:_handle_started()] - Job state initialized: standby
-2025-03-19 14:36:06,564 [klippy_connection.py:_check_ready()] - Klippy ready
-2025-03-19 14:36:07,056 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
-2025-03-19 14:36:07,461 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:09,044 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
-2025-03-19 14:36:09,057 [application.py:log_request()] - 101 GET /websocket?token= (127.0.0.1) [_TRUSTED_USER_] 1.90ms
-2025-03-19 14:36:09,058 [websockets.py:open()] - Websocket Opened: ID: 548461893856, Proxied: False, User Agent: , Host Name: 127.0.0.1
-2025-03-19 14:36:09,168 [websockets.py:_handle_identify()] - Websocket 548461893856 Client Identified - Name: KlipperScreen, Version: v0.4.5-10-43ad9fc6-dirty, Type: display
-2025-03-19 14:36:09,478 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:09,603 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
-2025-03-19 14:36:11,491 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
--------------------- Log Start | Wed Mar 19 09:06:48 2025 --------------------
-data_path: /home/om/printer_data
-is_default_data_path: False
-config_file: /home/om/printer_data/config/moonraker.conf
-startup_warnings: []
-verbose: False
-debug: False
-asyncio_debug: False
-is_backup_config: False
-is_python_package: True
-instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
-unix_socket_path: /home/om/printer_data/comms/moonraker.sock
-software_version: v0.8.0-268-ga23187b
-git_branch: master
-git_remote: origin
-git_repo_url: https://github.com/Arksine/moonraker.git
-modified_files: []
-unofficial_components: []
-log_file: /home/om/printer_data/logs/moonraker.log
-python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
-msgspec_enabled: False
-uvloop_enabled: False
-2025-03-19 14:36:48,840 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
-2025-03-19 14:36:48,840 [server.py:add_log_rollover_item()] - 
-#################### Moonraker Configuration ####################
-
-[server]
-host = 0.0.0.0
-port = 7125
-max_upload_size = 1024
-klippy_uds_address = ~/printer_data/comms/klippy.sock
-
-[file_manager]
-enable_object_processing = False
-
-[authorization]
-cors_domains = 
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	http://*.local
-	http://*.lan
-trusted_clients = 
-	10.0.0.0/8
-	127.0.0.0/8
-	169.254.0.0/16
-	172.16.0.0/12
-	192.168.0.0/16
-	FE80::/10
-	::1/128
-
-[octoprint_compat]
-
-[history]
-
-[announcements]
-subscriptions = 
-	mainsail
-
-#################################################################
-All Configuration Files:
-/home/om/printer_data/config/moonraker.conf
-#################################################################
-2025-03-19 14:36:49,328 [server.py:load_component()] - Component (secrets) loaded
-2025-03-19 14:36:49,357 [server.py:load_component()] - Component (template) loaded
-2025-03-19 14:36:49,368 [server.py:load_component()] - Component (klippy_connection) loaded
-2025-03-19 14:36:51,783 [server.py:load_component()] - Component (application) loaded
-2025-03-19 14:36:51,890 [server.py:load_component()] - Component (websockets) loaded
-2025-03-19 14:36:52,365 [server.py:load_component()] - Component (dbus_manager) loaded
-2025-03-19 14:36:52,506 [server.py:add_log_rollover_item()] - 
-Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
-Unsafe Shutdown Count: 55
-2025-03-19 14:36:52,580 [server.py:load_component()] - Component (database) loaded
-2025-03-19 14:36:52,712 [file_manager.py:__init__()] - Using File System Observer: inotify
-2025-03-19 14:36:52,806 [server.py:load_component()] - Component (file_manager) loaded
-2025-03-19 14:36:52,823 [server.py:load_component()] - Component (klippy_apis) loaded
-2025-03-19 14:36:53,274 [server.py:add_log_rollover_item()] - 
-System Info:
-
-***python***
-  version: (3, 9, 2, 'final', 0)
-  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-
-***cpu_info***
-  cpu_count: 4
-  bits: 64bit
-  processor: aarch64
-  cpu_desc: 
-  serial_number: 10000000f1b1a7a1
-  hardware_desc: BCM2835
-  model: Raspberry Pi 4 Model B Rev 1.5
-  total_memory: 1713720
-  memory_units: kB
-
-***sd_info***
-  manufacturer_id: 03
-  manufacturer: Sandisk
-  oem_id: 5344
-  product_name: SK32G
-  product_revision: 8.5
-  serial_number: 83e73683
-  manufacturer_date: 6/2024
-  capacity: 29.7 GiB
-  total_bytes: 31914983424
-
-***distribution***
-  name: Debian GNU/Linux 11 (bullseye)
-  id: debian
-  version: 11
-  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
-  like: 
-  codename: bullseye
-  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
-
-***virtualization***
-  virt_type: none
-  virt_identifier: none
-
-***network***
-
-***canbus***
-
-***Allowed Services***
-  klipper_mcu
-  webcamd
-  MoonCord
-  KlipperScreen
-  moonraker-telegram-bot
-  moonraker-obico
-  sonar
-  crowsnest
-  octoeverywhere
-  ratos-configurator
-2025-03-19 14:36:53,279 [server.py:load_component()] - Component (shell_command) loaded
-2025-03-19 14:36:53,279 [machine.py:__init__()] - Using System Provider: systemd_dbus
-2025-03-19 14:36:53,285 [server.py:load_component()] - Component (machine) loaded
-2025-03-19 14:36:53,295 [server.py:load_component()] - Component (data_store) loaded
-2025-03-19 14:36:53,315 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
-2025-03-19 14:36:53,317 [server.py:load_component()] - Component (proc_stats) loaded
-2025-03-19 14:36:53,325 [server.py:load_component()] - Component (job_state) loaded
-2025-03-19 14:36:53,331 [server.py:load_component()] - Component (job_queue) loaded
-2025-03-19 14:36:53,374 [server.py:load_component()] - Component (http_client) loaded
-2025-03-19 14:36:53,389 [server.py:load_component()] - Component (announcements) loaded
-2025-03-19 14:36:53,404 [server.py:load_component()] - Component (webcam) loaded
-2025-03-19 14:36:53,418 [server.py:load_component()] - Component (extensions) loaded
-2025-03-19 14:36:53,426 [server.py:load_component()] - Component (history) loaded
-2025-03-19 14:36:53,439 [server.py:load_component()] - Component (octoprint_compat) loaded
-2025-03-19 14:36:53,762 [authorization.py:__init__()] - Authorization Configuration Loaded
-Trusted Clients:
-10.0.0.0/8
-127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
-192.168.0.0/16
-fe80::/10
-::1/128
-CORS Domains:
-https://my\.mainsail\.xyz
-http://my\.mainsail\.xyz
-http://.*\.local
-http://.*\.lan
-2025-03-19 14:36:53,767 [server.py:load_component()] - Component (authorization) loaded
-2025-03-19 14:36:53,769 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
-2025-03-19 14:36:53,783 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
-2025-03-19 14:36:53,805 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
-2025-03-19 14:36:53,807 [machine.py:validation_init()] - Installation version in database up to date
-2025-03-19 14:36:56,151 [machine.py:check_virt_status()] - No Virtualization Detected
-2025-03-19 14:36:56,279 [server.py:add_log_rollover_item()] - 
-Systemd unit moonraker.service:
-unit_name: moonraker.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', 'network-online.target', 'sysinit.target']
-**After=['klipper.service', 'basic.target', 'system.slice', 'systemd-journald.socket', 'network-online.target', 'sysinit.target']
-**SupplementaryGroups=['moonraker-admin']
-**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
-**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
-**WorkingDirectory=
-**FragmentPath=/etc/systemd/system/moonraker.service
-**Description=API Server for Klipper SV1
-**User=om
-2025-03-19 14:36:56,279 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
-2025-03-19 14:36:56,280 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
-2025-03-19 14:36:56,281 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
-2025-03-19 14:36:56,282 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
-2025-03-19 14:36:56,283 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['sysinit.target', 'system.slice', '-.mount']
-**After=['systemd-journald.socket', 'system.slice', '-.mount', 'network-online.target', 'klipper-mcu.service', 'sysinit.target', 'basic.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:56,283 [server.py:_initialize_component()] - Performing Component Post Init: [history]
-2025-03-19 14:36:56,286 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
-2025-03-19 14:36:56,300 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
-2025-03-19 14:36:56,310 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
-2025-03-19 14:36:56,311 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
-2025-03-19 14:36:56,570 [klippy_connection.py:_do_connect()] - Klippy Connection Established
-2025-03-19 14:36:56,633 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', '-.mount', 'sysinit.target']
-**After=['klipper-mcu.service', '-.mount', 'basic.target', 'sysinit.target', 'system.slice', 'systemd-journald.socket', 'network-online.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:56,887 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a-dirty
-2025-03-19 14:36:56,903 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
-2025-03-19 14:36:56,904 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
-2025-03-19 14:36:57,154 [job_state.py:_handle_started()] - Job state initialized: standby
-2025-03-19 14:36:57,413 [klippy_connection.py:_check_ready()] - Klippy ready
-2025-03-19 14:36:57,906 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
-2025-03-19 14:36:58,329 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:37:00,342 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:37:02,358 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:37:03,855 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
-2025-03-19 14:37:03,867 [application.py:log_request()] - 101 GET /websocket?token= (127.0.0.1) [_TRUSTED_USER_] 1.68ms
-2025-03-19 14:37:03,867 [websockets.py:open()] - Websocket Opened: ID: 547854795200, Proxied: False, User Agent: , Host Name: 127.0.0.1
-2025-03-19 14:37:03,907 [websockets.py:_handle_identify()] - Websocket 547854795200 Client Identified - Name: KlipperScreen, Version: v0.4.5-10-43ad9fc6-dirty, Type: display
-2025-03-19 14:37:04,535 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
--------------------- Log Start | Wed Mar 19 09:05:54 2025 --------------------
-data_path: /home/om/printer_data
-is_default_data_path: False
-config_file: /home/om/printer_data/config/moonraker.conf
-startup_warnings: []
-verbose: False
-debug: False
-asyncio_debug: False
-is_backup_config: False
-is_python_package: True
-instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
-unix_socket_path: /home/om/printer_data/comms/moonraker.sock
-software_version: v0.8.0-268-ga23187b
-git_branch: master
-git_remote: origin
-git_repo_url: https://github.com/Arksine/moonraker.git
-modified_files: []
-unofficial_components: []
-log_file: /home/om/printer_data/logs/moonraker.log
-python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
-msgspec_enabled: False
-uvloop_enabled: False
-2025-03-19 14:35:54,733 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
-2025-03-19 14:35:54,734 [server.py:add_log_rollover_item()] - 
-#################### Moonraker Configuration ####################
-
-[server]
-host = 0.0.0.0
-port = 7125
-max_upload_size = 1024
-klippy_uds_address = ~/printer_data/comms/klippy.sock
-
-[file_manager]
-enable_object_processing = False
-
-[authorization]
-cors_domains = 
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	http://*.local
-	http://*.lan
-trusted_clients = 
-	10.0.0.0/8
-	127.0.0.0/8
-	169.254.0.0/16
-	172.16.0.0/12
-	192.168.0.0/16
-	FE80::/10
-	::1/128
-
-[octoprint_compat]
-
-[history]
-
-[announcements]
-subscriptions = 
-	mainsail
-
-#################################################################
-All Configuration Files:
-/home/om/printer_data/config/moonraker.conf
-#################################################################
-2025-03-19 14:35:55,254 [server.py:load_component()] - Component (secrets) loaded
-2025-03-19 14:35:55,290 [server.py:load_component()] - Component (template) loaded
-2025-03-19 14:35:55,301 [server.py:load_component()] - Component (klippy_connection) loaded
-2025-03-19 14:35:58,084 [server.py:load_component()] - Component (application) loaded
-2025-03-19 14:35:58,247 [server.py:load_component()] - Component (websockets) loaded
-2025-03-19 14:35:58,816 [server.py:load_component()] - Component (dbus_manager) loaded
-2025-03-19 14:35:58,969 [server.py:add_log_rollover_item()] - 
-Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
-Unsafe Shutdown Count: 56
-2025-03-19 14:35:59,049 [server.py:load_component()] - Component (database) loaded
-2025-03-19 14:35:59,196 [file_manager.py:__init__()] - Using File System Observer: inotify
-2025-03-19 14:35:59,335 [server.py:load_component()] - Component (file_manager) loaded
-2025-03-19 14:35:59,356 [server.py:load_component()] - Component (klippy_apis) loaded
-2025-03-19 14:35:59,859 [server.py:add_log_rollover_item()] - 
-System Info:
-
-***python***
-  version: (3, 9, 2, 'final', 0)
-  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-
-***cpu_info***
-  cpu_count: 4
-  bits: 64bit
-  processor: aarch64
-  cpu_desc: 
-  serial_number: 10000000f1b1a7a1
-  hardware_desc: BCM2835
-  model: Raspberry Pi 4 Model B Rev 1.5
-  total_memory: 1713720
-  memory_units: kB
-
-***sd_info***
-  manufacturer_id: 03
-  manufacturer: Sandisk
-  oem_id: 5344
-  product_name: SK32G
-  product_revision: 8.5
-  serial_number: 83e73683
-  manufacturer_date: 6/2024
-  capacity: 29.7 GiB
-  total_bytes: 31914983424
-
-***distribution***
-  name: Debian GNU/Linux 11 (bullseye)
-  id: debian
-  version: 11
-  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
-  like: 
-  codename: bullseye
-  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
-
-***virtualization***
-  virt_type: none
-  virt_identifier: none
-
-***network***
-
-***canbus***
-
-***Allowed Services***
-  klipper_mcu
-  webcamd
-  MoonCord
-  KlipperScreen
-  moonraker-telegram-bot
-  moonraker-obico
-  sonar
-  crowsnest
-  octoeverywhere
-  ratos-configurator
-2025-03-19 14:35:59,864 [server.py:load_component()] - Component (shell_command) loaded
-2025-03-19 14:35:59,864 [machine.py:__init__()] - Using System Provider: systemd_dbus
-2025-03-19 14:35:59,870 [server.py:load_component()] - Component (machine) loaded
-2025-03-19 14:35:59,879 [server.py:load_component()] - Component (data_store) loaded
-2025-03-19 14:35:59,903 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
-2025-03-19 14:35:59,904 [server.py:load_component()] - Component (proc_stats) loaded
-2025-03-19 14:35:59,910 [server.py:load_component()] - Component (job_state) loaded
-2025-03-19 14:35:59,924 [server.py:load_component()] - Component (job_queue) loaded
-2025-03-19 14:35:59,966 [server.py:load_component()] - Component (http_client) loaded
-2025-03-19 14:35:59,973 [server.py:load_component()] - Component (announcements) loaded
-2025-03-19 14:35:59,982 [server.py:load_component()] - Component (webcam) loaded
-2025-03-19 14:35:59,995 [server.py:load_component()] - Component (extensions) loaded
-2025-03-19 14:36:00,011 [server.py:load_component()] - Component (octoprint_compat) loaded
-2025-03-19 14:36:00,090 [authorization.py:__init__()] - Authorization Configuration Loaded
-Trusted Clients:
-10.0.0.0/8
-127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
-192.168.0.0/16
-fe80::/10
-::1/128
-CORS Domains:
-https://my\.mainsail\.xyz
-http://my\.mainsail\.xyz
-http://.*\.local
-http://.*\.lan
-2025-03-19 14:36:00,097 [server.py:load_component()] - Component (authorization) loaded
-2025-03-19 14:36:00,106 [server.py:load_component()] - Component (history) loaded
-2025-03-19 14:36:00,109 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
-2025-03-19 14:36:00,122 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
-2025-03-19 14:36:00,464 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
-2025-03-19 14:36:00,465 [machine.py:validation_init()] - Installation version in database up to date
-2025-03-19 14:36:05,768 [machine.py:check_virt_status()] - No Virtualization Detected
-2025-03-19 14:36:05,869 [server.py:add_log_rollover_item()] - 
-Systemd unit moonraker.service:
-unit_name: moonraker.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', 'sysinit.target', 'network-online.target']
-**After=['system.slice', 'sysinit.target', 'klipper.service', 'systemd-journald.socket', 'network-online.target', 'basic.target']
-**SupplementaryGroups=['moonraker-admin']
-**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
-**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
-**WorkingDirectory=
-**FragmentPath=/etc/systemd/system/moonraker.service
-**Description=API Server for Klipper SV1
-**User=om
-2025-03-19 14:36:05,870 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
-2025-03-19 14:36:05,870 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
-2025-03-19 14:36:05,871 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
-2025-03-19 14:36:05,872 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
-2025-03-19 14:36:05,874 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', '-.mount', 'sysinit.target']
-**After=['klipper-mcu.service', '-.mount', 'basic.target', 'sysinit.target', 'system.slice', 'systemd-journald.socket', 'network-online.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:05,874 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
-2025-03-19 14:36:05,874 [server.py:_initialize_component()] - Performing Component Post Init: [history]
-2025-03-19 14:36:05,888 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
-2025-03-19 14:36:05,893 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
-2025-03-19 14:36:05,894 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
-2025-03-19 14:36:06,153 [klippy_connection.py:_do_connect()] - Klippy Connection Established
-2025-03-19 14:36:06,236 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', 'sysinit.target', '-.mount']
-**After=['-.mount', 'system.slice', 'sysinit.target', 'klipper-mcu.service', 'network-online.target', 'basic.target', 'systemd-journald.socket']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:06,491 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a-dirty
-2025-03-19 14:36:06,518 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
-2025-03-19 14:36:06,520 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
-2025-03-19 14:36:06,769 [job_state.py:_handle_started()] - Job state initialized: standby
-2025-03-19 14:36:07,031 [klippy_connection.py:_check_ready()] - Klippy ready
-2025-03-19 14:36:07,522 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
-2025-03-19 14:36:07,914 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:09,658 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
-2025-03-19 14:36:09,670 [application.py:log_request()] - 101 GET /websocket?token= (127.0.0.1) [_TRUSTED_USER_] 2.04ms
-2025-03-19 14:36:09,671 [websockets.py:open()] - Websocket Opened: ID: 548562270576, Proxied: False, User Agent: , Host Name: 127.0.0.1
-2025-03-19 14:36:09,780 [websockets.py:_handle_identify()] - Websocket 548562270576 Client Identified - Name: KlipperScreen, Version: v0.4.5-10-43ad9fc6-dirty, Type: display
-2025-03-19 14:36:09,930 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:10,316 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
-2025-03-19 14:36:11,945 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
--------------------- Log Start | Wed Mar 19 09:05:55 2025 --------------------
-data_path: /home/om/printer_data
-is_default_data_path: False
-config_file: /home/om/printer_data/config/moonraker.conf
-startup_warnings: []
-verbose: False
-debug: False
-asyncio_debug: False
-is_backup_config: False
-is_python_package: True
-instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
-unix_socket_path: /home/om/printer_data/comms/moonraker.sock
-software_version: v0.8.0-268-ga23187b
-git_branch: master
-git_remote: origin
-git_repo_url: https://github.com/Arksine/moonraker.git
-modified_files: []
-unofficial_components: []
-log_file: /home/om/printer_data/logs/moonraker.log
-python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
-msgspec_enabled: False
-uvloop_enabled: False
-2025-03-19 14:35:55,090 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
-2025-03-19 14:35:55,091 [server.py:add_log_rollover_item()] - 
-#################### Moonraker Configuration ####################
-
-[server]
-host = 0.0.0.0
-port = 7125
-max_upload_size = 1024
-klippy_uds_address = ~/printer_data/comms/klippy.sock
-
-[file_manager]
-enable_object_processing = False
-
-[authorization]
-cors_domains = 
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	http://*.local
-	http://*.lan
-trusted_clients = 
-	10.0.0.0/8
-	127.0.0.0/8
-	169.254.0.0/16
-	172.16.0.0/12
-	192.168.0.0/16
-	FE80::/10
-	::1/128
-
-[octoprint_compat]
-
-[history]
-
-[announcements]
-subscriptions = 
-	mainsail
-
-#################################################################
-All Configuration Files:
-/home/om/printer_data/config/moonraker.conf
-#################################################################
-2025-03-19 14:35:55,665 [server.py:load_component()] - Component (secrets) loaded
-2025-03-19 14:35:55,693 [server.py:load_component()] - Component (template) loaded
-2025-03-19 14:35:55,704 [server.py:load_component()] - Component (klippy_connection) loaded
-2025-03-19 14:35:58,278 [server.py:load_component()] - Component (application) loaded
-2025-03-19 14:35:58,438 [server.py:load_component()] - Component (websockets) loaded
-2025-03-19 14:35:58,958 [server.py:load_component()] - Component (dbus_manager) loaded
-2025-03-19 14:35:59,117 [server.py:add_log_rollover_item()] - 
-Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
-Unsafe Shutdown Count: 57
-2025-03-19 14:35:59,198 [server.py:load_component()] - Component (database) loaded
-2025-03-19 14:35:59,342 [file_manager.py:__init__()] - Using File System Observer: inotify
-2025-03-19 14:35:59,483 [server.py:load_component()] - Component (file_manager) loaded
-2025-03-19 14:35:59,495 [server.py:load_component()] - Component (klippy_apis) loaded
-2025-03-19 14:35:59,912 [server.py:add_log_rollover_item()] - 
-System Info:
-
-***python***
-  version: (3, 9, 2, 'final', 0)
-  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-
-***cpu_info***
-  cpu_count: 4
-  bits: 64bit
-  processor: aarch64
-  cpu_desc: 
-  serial_number: 10000000f1b1a7a1
-  hardware_desc: BCM2835
-  model: Raspberry Pi 4 Model B Rev 1.5
-  total_memory: 1713720
-  memory_units: kB
-
-***sd_info***
-  manufacturer_id: 03
-  manufacturer: Sandisk
-  oem_id: 5344
-  product_name: SK32G
-  product_revision: 8.5
-  serial_number: 83e73683
-  manufacturer_date: 6/2024
-  capacity: 29.7 GiB
-  total_bytes: 31914983424
-
-***distribution***
-  name: Debian GNU/Linux 11 (bullseye)
-  id: debian
-  version: 11
-  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
-  like: 
-  codename: bullseye
-  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
-
-***virtualization***
-  virt_type: none
-  virt_identifier: none
-
-***network***
-
-***canbus***
-
-***Allowed Services***
-  klipper_mcu
-  webcamd
-  MoonCord
-  KlipperScreen
-  moonraker-telegram-bot
-  moonraker-obico
-  sonar
-  crowsnest
-  octoeverywhere
-  ratos-configurator
-2025-03-19 14:35:59,919 [server.py:load_component()] - Component (shell_command) loaded
-2025-03-19 14:35:59,920 [machine.py:__init__()] - Using System Provider: systemd_dbus
-2025-03-19 14:35:59,924 [server.py:load_component()] - Component (machine) loaded
-2025-03-19 14:35:59,932 [server.py:load_component()] - Component (data_store) loaded
-2025-03-19 14:35:59,952 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
-2025-03-19 14:35:59,953 [server.py:load_component()] - Component (proc_stats) loaded
-2025-03-19 14:35:59,964 [server.py:load_component()] - Component (job_state) loaded
-2025-03-19 14:35:59,971 [server.py:load_component()] - Component (job_queue) loaded
-2025-03-19 14:36:00,014 [server.py:load_component()] - Component (http_client) loaded
-2025-03-19 14:36:00,029 [server.py:load_component()] - Component (announcements) loaded
-2025-03-19 14:36:00,041 [server.py:load_component()] - Component (webcam) loaded
-2025-03-19 14:36:00,058 [server.py:load_component()] - Component (extensions) loaded
-2025-03-19 14:36:00,448 [authorization.py:__init__()] - Authorization Configuration Loaded
-Trusted Clients:
-10.0.0.0/8
-127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
-192.168.0.0/16
-fe80::/10
-::1/128
-CORS Domains:
-https://my\.mainsail\.xyz
-http://my\.mainsail\.xyz
-http://.*\.local
-http://.*\.lan
-2025-03-19 14:36:00,453 [server.py:load_component()] - Component (authorization) loaded
-2025-03-19 14:36:00,469 [server.py:load_component()] - Component (octoprint_compat) loaded
-2025-03-19 14:36:00,483 [server.py:load_component()] - Component (history) loaded
-2025-03-19 14:36:00,485 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
-2025-03-19 14:36:00,502 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
-2025-03-19 14:36:00,524 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
-2025-03-19 14:36:00,526 [machine.py:validation_init()] - Installation version in database up to date
-2025-03-19 14:36:03,626 [machine.py:check_virt_status()] - No Virtualization Detected
-2025-03-19 14:36:03,722 [server.py:add_log_rollover_item()] - 
-Systemd unit moonraker.service:
-unit_name: moonraker.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['sysinit.target', 'network-online.target', 'system.slice']
-**After=['network-online.target', 'sysinit.target', 'systemd-journald.socket', 'klipper.service', 'system.slice', 'basic.target']
-**SupplementaryGroups=['moonraker-admin']
-**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
-**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
-**WorkingDirectory=
-**FragmentPath=/etc/systemd/system/moonraker.service
-**Description=API Server for Klipper SV1
-**User=om
-2025-03-19 14:36:03,723 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
-2025-03-19 14:36:03,723 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
-2025-03-19 14:36:03,724 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
-2025-03-19 14:36:03,725 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
-2025-03-19 14:36:03,726 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['system.slice', 'sysinit.target', '-.mount']
-**After=['-.mount', 'system.slice', 'sysinit.target', 'klipper-mcu.service', 'network-online.target', 'basic.target', 'systemd-journald.socket']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:03,726 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
-2025-03-19 14:36:03,726 [server.py:_initialize_component()] - Performing Component Post Init: [history]
-2025-03-19 14:36:03,737 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
-2025-03-19 14:36:03,740 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
-2025-03-19 14:36:03,743 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
-2025-03-19 14:36:03,999 [klippy_connection.py:_do_connect()] - Klippy Connection Established
-2025-03-19 14:36:04,065 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['sysinit.target', '-.mount', 'system.slice']
-**After=['klipper-mcu.service', 'basic.target', 'systemd-journald.socket', '-.mount', 'system.slice', 'network-online.target', 'sysinit.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:04,318 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a-dirty
-2025-03-19 14:36:04,336 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
-2025-03-19 14:36:04,338 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
-2025-03-19 14:36:04,584 [job_state.py:_handle_started()] - Job state initialized: standby
-2025-03-19 14:36:04,846 [klippy_connection.py:_check_ready()] - Klippy ready
-2025-03-19 14:36:05,336 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
-2025-03-19 14:36:05,758 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:07,772 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:09,786 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:10,927 [authorization.py:_check_trusted_connection()] - Trusted Connection Detected, IP: 127.0.0.1
-2025-03-19 14:36:10,938 [application.py:log_request()] - 101 GET /websocket?token= (127.0.0.1) [_TRUSTED_USER_] 2.20ms
-2025-03-19 14:36:10,939 [websockets.py:open()] - Websocket Opened: ID: 548015620448, Proxied: False, User Agent: , Host Name: 127.0.0.1
-2025-03-19 14:36:10,976 [websockets.py:_handle_identify()] - Websocket 548015620448 Client Identified - Name: KlipperScreen, Version: v0.4.5-10-43ad9fc6-dirty, Type: display
-2025-03-19 14:36:11,489 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
--------------------- Log Start | Wed Mar 19 09:05:54 2025 --------------------
-data_path: /home/om/printer_data
-is_default_data_path: False
-config_file: /home/om/printer_data/config/moonraker.conf
-startup_warnings: []
-verbose: False
-debug: False
-asyncio_debug: False
-is_backup_config: False
-is_python_package: True
-instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
-unix_socket_path: /home/om/printer_data/comms/moonraker.sock
-software_version: v0.8.0-268-ga23187b
-git_branch: master
-git_remote: origin
-git_repo_url: https://github.com/Arksine/moonraker.git
-modified_files: []
-unofficial_components: []
-log_file: /home/om/printer_data/logs/moonraker.log
-python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
-launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
-msgspec_enabled: False
-uvloop_enabled: False
-2025-03-19 14:35:54,927 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
-2025-03-19 14:35:54,927 [server.py:add_log_rollover_item()] - 
-#################### Moonraker Configuration ####################
-
-[server]
-host = 0.0.0.0
-port = 7125
-max_upload_size = 1024
-klippy_uds_address = ~/printer_data/comms/klippy.sock
-
-[file_manager]
-enable_object_processing = False
-
-[authorization]
-cors_domains = 
-	https://my.mainsail.xyz
-	http://my.mainsail.xyz
-	http://*.local
-	http://*.lan
-trusted_clients = 
-	10.0.0.0/8
-	127.0.0.0/8
-	169.254.0.0/16
-	172.16.0.0/12
-	192.168.0.0/16
-	FE80::/10
-	::1/128
-
-[octoprint_compat]
-
-[history]
-
-[announcements]
-subscriptions = 
-	mainsail
-
-#################################################################
-All Configuration Files:
-/home/om/printer_data/config/moonraker.conf
-#################################################################
-2025-03-19 14:35:55,483 [server.py:load_component()] - Component (secrets) loaded
-2025-03-19 14:35:55,511 [server.py:load_component()] - Component (template) loaded
-2025-03-19 14:35:55,533 [server.py:load_component()] - Component (klippy_connection) loaded
-2025-03-19 14:35:58,215 [server.py:load_component()] - Component (application) loaded
-2025-03-19 14:35:58,348 [server.py:load_component()] - Component (websockets) loaded
-2025-03-19 14:35:58,871 [server.py:load_component()] - Component (dbus_manager) loaded
-2025-03-19 14:35:59,027 [server.py:add_log_rollover_item()] - 
 Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
 Unsafe Shutdown Count: 58
-2025-03-19 14:35:59,117 [server.py:load_component()] - Component (database) loaded
-2025-03-19 14:35:59,257 [file_manager.py:__init__()] - Using File System Observer: inotify
-2025-03-19 14:35:59,361 [server.py:load_component()] - Component (file_manager) loaded
-2025-03-19 14:35:59,378 [server.py:load_component()] - Component (klippy_apis) loaded
-2025-03-19 14:35:59,808 [server.py:add_log_rollover_item()] - 
+
 System Info:
 
 ***python***
@@ -1899,41 +120,7 @@ System Info:
   crowsnest
   octoeverywhere
   ratos-configurator
-2025-03-19 14:35:59,815 [server.py:load_component()] - Component (shell_command) loaded
-2025-03-19 14:35:59,816 [machine.py:__init__()] - Using System Provider: systemd_dbus
-2025-03-19 14:35:59,822 [server.py:load_component()] - Component (machine) loaded
-2025-03-19 14:35:59,834 [server.py:load_component()] - Component (data_store) loaded
-2025-03-19 14:35:59,848 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
-2025-03-19 14:35:59,849 [server.py:load_component()] - Component (proc_stats) loaded
-2025-03-19 14:35:59,861 [server.py:load_component()] - Component (job_state) loaded
-2025-03-19 14:35:59,875 [server.py:load_component()] - Component (job_queue) loaded
-2025-03-19 14:35:59,925 [server.py:load_component()] - Component (http_client) loaded
-2025-03-19 14:35:59,934 [server.py:load_component()] - Component (announcements) loaded
-2025-03-19 14:35:59,946 [server.py:load_component()] - Component (webcam) loaded
-2025-03-19 14:35:59,958 [server.py:load_component()] - Component (extensions) loaded
-2025-03-19 14:36:00,178 [authorization.py:__init__()] - Authorization Configuration Loaded
-Trusted Clients:
-10.0.0.0/8
-127.0.0.0/8
-169.254.0.0/16
-172.16.0.0/12
-192.168.0.0/16
-fe80::/10
-::1/128
-CORS Domains:
-https://my\.mainsail\.xyz
-http://my\.mainsail\.xyz
-http://.*\.local
-http://.*\.lan
-2025-03-19 14:36:00,182 [server.py:load_component()] - Component (authorization) loaded
-2025-03-19 14:36:00,294 [server.py:load_component()] - Component (octoprint_compat) loaded
-2025-03-19 14:36:00,724 [server.py:load_component()] - Component (history) loaded
-2025-03-19 14:36:00,726 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
-2025-03-19 14:36:00,739 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
-2025-03-19 14:36:01,861 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
-2025-03-19 14:36:01,862 [machine.py:validation_init()] - Installation version in database up to date
-2025-03-19 14:36:02,462 [machine.py:check_virt_status()] - No Virtualization Detected
-2025-03-19 14:36:02,551 [server.py:add_log_rollover_item()] - 
+
 Systemd unit moonraker.service:
 unit_name: moonraker.service
 is_default: True
@@ -1948,32 +135,7 @@ Properties:
 **FragmentPath=/etc/systemd/system/moonraker.service
 **Description=API Server for Klipper SV1
 **User=om
-2025-03-19 14:36:02,551 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
-2025-03-19 14:36:02,552 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
-2025-03-19 14:36:02,554 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
-2025-03-19 14:36:02,555 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
-2025-03-19 14:36:02,555 [server.py:add_log_rollover_item()] - 
-Systemd unit klipper.service:
-unit_name: klipper.service
-is_default: True
-manager: systemd
-Properties:
-**Requires=['sysinit.target', '-.mount', 'system.slice']
-**After=['klipper-mcu.service', 'basic.target', 'systemd-journald.socket', '-.mount', 'system.slice', 'network-online.target', 'sysinit.target']
-**SupplementaryGroups=[]
-**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
-**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
-**WorkingDirectory=/home/om/klipper
-**FragmentPath=/etc/systemd/system/klipper.service
-**Description=Klipper 3D Printer Firmware SV1
-**User=om
-2025-03-19 14:36:02,555 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
-2025-03-19 14:36:02,556 [server.py:_initialize_component()] - Performing Component Post Init: [history]
-2025-03-19 14:36:02,571 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
-2025-03-19 14:36:02,573 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
-2025-03-19 14:36:02,588 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
-2025-03-19 14:36:02,842 [klippy_connection.py:_do_connect()] - Klippy Connection Established
-2025-03-19 14:36:02,909 [server.py:add_log_rollover_item()] - 
+
 Systemd unit klipper.service:
 unit_name: klipper.service
 is_default: True
@@ -1988,12 +150,346 @@ Properties:
 **FragmentPath=/etc/systemd/system/klipper.service
 **Description=Klipper 3D Printer Firmware SV1
 **User=om
-2025-03-19 14:36:03,162 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a-dirty
-2025-03-19 14:36:03,176 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
-2025-03-19 14:36:03,177 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
-2025-03-19 14:36:03,426 [job_state.py:_handle_started()] - Job state initialized: standby
-2025-03-19 14:36:03,685 [klippy_connection.py:_check_ready()] - Klippy ready
-2025-03-19 14:36:04,179 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
-2025-03-19 14:36:04,601 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:06,615 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
-2025-03-19 14:36:08,628 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+Klipper Version: v0.12.0-85-gd785b396a-dirty
+2025-03-21 00:06:04,635 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 00:06:06,652 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 00:06:08,664 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 00:36:04,636 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 00:36:06,651 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 00:36:08,666 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 01:06:04,637 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 01:06:06,651 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 01:06:08,664 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 01:36:04,636 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 01:36:06,649 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 01:36:08,664 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 02:06:04,636 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 02:06:06,654 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 02:06:08,666 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 02:36:04,637 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 02:36:06,650 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 02:36:08,664 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 03:06:04,640 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 03:06:06,658 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 03:06:08,673 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 03:36:04,639 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 03:36:06,653 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 03:36:08,665 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 04:06:04,642 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 04:06:06,656 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 04:06:08,669 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 04:36:04,646 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 04:36:06,668 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 04:36:08,681 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 05:06:04,653 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 05:06:06,671 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 05:06:08,684 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 05:36:04,646 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 05:36:06,663 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 05:36:08,675 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 06:06:04,659 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 06:06:06,672 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 06:06:08,684 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 06:36:04,651 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 06:36:06,663 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 06:36:08,677 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 07:06:04,650 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 07:06:06,665 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 07:06:08,680 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 07:36:04,646 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 07:36:06,659 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 07:36:08,672 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 08:06:04,652 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 08:06:06,674 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 08:06:08,686 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 08:36:04,665 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 08:36:06,680 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 08:36:08,693 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 09:06:04,652 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 09:06:06,668 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 09:06:08,681 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 09:36:04,653 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 09:36:06,669 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 09:36:08,686 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 10:06:04,652 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 10:06:06,666 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 10:06:08,678 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 10:36:04,654 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 10:36:06,665 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 10:36:08,677 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 11:06:04,672 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 11:06:06,695 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 11:06:08,708 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 11:36:04,657 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 11:36:06,670 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 11:36:08,683 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 12:06:04,657 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 12:06:06,675 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 12:06:08,689 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 12:36:04,657 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 12:36:06,670 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 12:36:08,686 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 12:42:19,973 [file_manager.py:get_file_list()] - Updating File List <gcodes>...
+2025-03-21 12:42:20,186 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <14.2.25.Rotory R L 350 L335 50L1.gcode>
+2025-03-21 12:42:20,186 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <30mm_Funnel_Vase_mode_PLA_5h53m.gcode>
+2025-03-21 12:42:20,187 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <700_5hr_CFFFP_Spiral_Vase.gcode>
+2025-03-21 12:42:20,187 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <700_8hr_337gmCFFFP_3DP_Fin01.gcode>
+2025-03-21 12:42:20,187 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <bx700_Christmas_Tree4_2023_PLA_5h41m.gcode>
+2025-03-21 12:42:20,187 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <CFFFP_5_HOLE_CARABINER.gcode>
+2025-03-21 12:42:20,188 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <CFFFP_AdiYogiMQOR-new.gcode>
+2025-03-21 12:42:20,188 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <CFFFP_fine_positive_features.gcode>
+2025-03-21 12:42:20,188 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <CFFFP_Flaver Rollor.gcode>
+2025-03-21 12:42:20,188 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <CFFFP_MINI CHAF WEEDER CASE BOX- C.gcode>
+2025-03-21 12:42:20,189 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <CFFFP_Test_Print_Bed_v2.gcode>
+2025-03-21 12:42:20,189 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <CFFFP_Tolerence_Test.gcode>
+2025-03-21 12:42:20,189 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <CFFFP_xyzCalibration_cube.gcode>
+2025-03-21 12:42:20,189 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <GX700tolerence_Test.gcode>
+2025-03-21 12:42:20,189 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <ROTARY900.gcode>
+2025-03-21 12:42:20,190 [common.py:build_error()] - JSON-RPC Request Error - Requested Method: server.files.metadata, Code: -32601, Message: Metadata not available for <SkullV_lowP_PLA_6h26m.gcode>
+2025-03-21 13:06:04,657 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 13:06:06,671 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 13:06:08,685 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 13:36:04,662 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 13:36:06,679 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 13:36:08,692 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 14:06:04,660 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 14:06:06,673 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 14:06:08,684 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 14:36:04,664 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 14:36:06,678 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 14:36:08,690 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 15:06:04,665 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 15:06:06,680 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 15:06:08,695 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+2025-03-21 15:36:04,664 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
+2025-03-21 15:36:06,679 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'klipper': [Errno -3] Temporary failure in name resolution
+2025-03-21 15:36:08,690 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'mainsail': [Errno -3] Temporary failure in name resolution
+-------------------- Log Start | Fri Mar 21 09:47:15 2025 --------------------
+data_path: /home/om/printer_data
+is_default_data_path: False
+config_file: /home/om/printer_data/config/moonraker.conf
+startup_warnings: []
+verbose: False
+debug: False
+asyncio_debug: False
+is_backup_config: False
+is_python_package: True
+instance_uuid: 3060fe1b3f574a95a5a343c6fc66396c
+unix_socket_path: /home/om/printer_data/comms/moonraker.sock
+software_version: v0.8.0-268-ga23187b
+git_branch: master
+git_remote: origin
+git_repo_url: https://github.com/Arksine/moonraker.git
+modified_files: []
+unofficial_components: []
+log_file: /home/om/printer_data/logs/moonraker.log
+python_version: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+launch_args: /home/om/moonraker-env/bin/python /home/om/moonraker/moonraker/__main__.py
+msgspec_enabled: False
+uvloop_enabled: False
+2025-03-21 15:17:15,898 [confighelper.py:read_file()] - Configuration File '/home/om/printer_data/config/moonraker.conf' parsed, total size: 2196 B
+2025-03-21 15:17:15,899 [server.py:add_log_rollover_item()] - 
+#################### Moonraker Configuration ####################
+
+[server]
+host = 0.0.0.0
+port = 7125
+max_upload_size = 1024
+klippy_uds_address = ~/printer_data/comms/klippy.sock
+
+[file_manager]
+enable_object_processing = False
+
+[authorization]
+cors_domains = 
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	http://*.local
+	http://*.lan
+trusted_clients = 
+	10.0.0.0/8
+	127.0.0.0/8
+	169.254.0.0/16
+	172.16.0.0/12
+	192.168.0.0/16
+	FE80::/10
+	::1/128
+
+[octoprint_compat]
+
+[history]
+
+[announcements]
+subscriptions = 
+	mainsail
+
+#################################################################
+All Configuration Files:
+/home/om/printer_data/config/moonraker.conf
+#################################################################
+2025-03-21 15:17:16,451 [server.py:load_component()] - Component (secrets) loaded
+2025-03-21 15:17:16,484 [server.py:load_component()] - Component (template) loaded
+2025-03-21 15:17:16,499 [server.py:load_component()] - Component (klippy_connection) loaded
+2025-03-21 15:17:19,217 [server.py:load_component()] - Component (application) loaded
+2025-03-21 15:17:19,363 [server.py:load_component()] - Component (websockets) loaded
+2025-03-21 15:17:19,896 [server.py:load_component()] - Component (dbus_manager) loaded
+2025-03-21 15:17:20,092 [server.py:add_log_rollover_item()] - 
+Database Versions: pylmdb = 1.4.1, lmdb = (0, 9, 29)
+Unsafe Shutdown Count: 59
+2025-03-21 15:17:20,168 [server.py:load_component()] - Component (database) loaded
+2025-03-21 15:17:20,274 [file_manager.py:__init__()] - Using File System Observer: inotify
+2025-03-21 15:17:20,381 [server.py:load_component()] - Component (file_manager) loaded
+2025-03-21 15:17:20,393 [server.py:load_component()] - Component (klippy_apis) loaded
+2025-03-21 15:17:20,874 [server.py:add_log_rollover_item()] - 
+System Info:
+
+***python***
+  version: (3, 9, 2, 'final', 0)
+  version_string: 3.9.2 (default, Feb 28 2021, 17:03:44)  [GCC 10.2.1 20210110]
+
+***cpu_info***
+  cpu_count: 4
+  bits: 64bit
+  processor: aarch64
+  cpu_desc: 
+  serial_number: 10000000f1b1a7a1
+  hardware_desc: BCM2835
+  model: Raspberry Pi 4 Model B Rev 1.5
+  total_memory: 1713720
+  memory_units: kB
+
+***sd_info***
+  manufacturer_id: 03
+  manufacturer: Sandisk
+  oem_id: 5344
+  product_name: SK32G
+  product_revision: 8.5
+  serial_number: 83e73683
+  manufacturer_date: 6/2024
+  capacity: 29.7 GiB
+  total_bytes: 31914983424
+
+***distribution***
+  name: Debian GNU/Linux 11 (bullseye)
+  id: debian
+  version: 11
+  version_parts: {'major': '11', 'minor': '', 'build_number': ''}
+  like: 
+  codename: bullseye
+  release_info: {'name': 'MainsailOS', 'version_id': '1.3.2', 'codename': 'bullseye', 'id': 'mainsailos'}
+
+***virtualization***
+  virt_type: none
+  virt_identifier: none
+
+***network***
+
+***canbus***
+
+***Allowed Services***
+  klipper_mcu
+  webcamd
+  MoonCord
+  KlipperScreen
+  moonraker-telegram-bot
+  moonraker-obico
+  sonar
+  crowsnest
+  octoeverywhere
+  ratos-configurator
+2025-03-21 15:17:20,883 [server.py:load_component()] - Component (shell_command) loaded
+2025-03-21 15:17:20,883 [machine.py:__init__()] - Using System Provider: systemd_dbus
+2025-03-21 15:17:20,890 [server.py:load_component()] - Component (machine) loaded
+2025-03-21 15:17:20,907 [server.py:load_component()] - Component (data_store) loaded
+2025-03-21 15:17:20,923 [proc_stats.py:__init__()] - Detected 'vcgencmd', throttle checking enabled
+2025-03-21 15:17:20,925 [server.py:load_component()] - Component (proc_stats) loaded
+2025-03-21 15:17:20,935 [server.py:load_component()] - Component (job_state) loaded
+2025-03-21 15:17:20,943 [server.py:load_component()] - Component (job_queue) loaded
+2025-03-21 15:17:21,457 [server.py:load_component()] - Component (http_client) loaded
+2025-03-21 15:17:21,472 [server.py:load_component()] - Component (announcements) loaded
+2025-03-21 15:17:21,486 [server.py:load_component()] - Component (webcam) loaded
+2025-03-21 15:17:21,496 [server.py:load_component()] - Component (extensions) loaded
+2025-03-21 15:17:21,504 [server.py:load_component()] - Component (history) loaded
+2025-03-21 15:17:21,516 [server.py:load_component()] - Component (octoprint_compat) loaded
+2025-03-21 15:17:21,591 [authorization.py:__init__()] - Authorization Configuration Loaded
+Trusted Clients:
+10.0.0.0/8
+127.0.0.0/8
+169.254.0.0/16
+172.16.0.0/12
+192.168.0.0/16
+fe80::/10
+::1/128
+CORS Domains:
+https://my\.mainsail\.xyz
+http://my\.mainsail\.xyz
+http://.*\.local
+http://.*\.lan
+2025-03-21 15:17:21,595 [server.py:load_component()] - Component (authorization) loaded
+2025-03-21 15:17:21,597 [server.py:_initialize_component()] - Performing Component Post Init: [dbus_manager]
+2025-03-21 15:17:21,612 [server.py:_initialize_component()] - Performing Component Post Init: [file_manager]
+2025-03-21 15:17:21,640 [server.py:_initialize_component()] - Performing Component Post Init: [machine]
+2025-03-21 15:17:21,641 [machine.py:validation_init()] - Installation version in database up to date
+2025-03-21 15:17:25,117 [machine.py:check_virt_status()] - No Virtualization Detected
+2025-03-21 15:17:25,219 [server.py:add_log_rollover_item()] - 
+Systemd unit moonraker.service:
+unit_name: moonraker.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['network-online.target', 'sysinit.target', 'system.slice']
+**After=['systemd-journald.socket', 'network-online.target', 'sysinit.target', 'klipper.service', 'system.slice', 'basic.target']
+**SupplementaryGroups=['moonraker-admin']
+**EnvironmentFiles=/home/om/printer_data/systemd/moonraker.env
+**ExecStart=/home/om/moonraker-env/bin/python $MOONRAKER_ARGS
+**WorkingDirectory=
+**FragmentPath=/etc/systemd/system/moonraker.service
+**Description=API Server for Klipper SV1
+**User=om
+2025-03-21 15:17:25,219 [server.py:_initialize_component()] - Performing Component Post Init: [proc_stats]
+2025-03-21 15:17:25,220 [server.py:_initialize_component()] - Performing Component Post Init: [announcements]
+2025-03-21 15:17:25,221 [server.py:_initialize_component()] - Performing Component Post Init: [webcam]
+2025-03-21 15:17:25,222 [server.py:_initialize_component()] - Performing Component Post Init: [klippy_connection]
+2025-03-21 15:17:25,224 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['-.mount', 'system.slice', 'sysinit.target']
+**After=['sysinit.target', 'klipper-mcu.service', 'systemd-journald.socket', 'network-online.target', 'basic.target', '-.mount', 'system.slice']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
+**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/om/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=om
+2025-03-21 15:17:25,224 [server.py:_initialize_component()] - Performing Component Post Init: [history]
+2025-03-21 15:17:25,226 [server.py:_initialize_component()] - Performing Component Post Init: [authorization]
+2025-03-21 15:17:25,241 [extensions.py:start_unix_server()] - Creating Unix Domain Socket at '/home/om/printer_data/comms/moonraker.sock'
+2025-03-21 15:17:25,245 [server.py:start_server()] - Starting Moonraker on (0.0.0.0, 7125), Hostname: Go3D
+2025-03-21 15:17:25,246 [application.py:listen()] - SSL Certificate/Key not configured, aborting HTTPS Server startup
+2025-03-21 15:17:25,500 [klippy_connection.py:_do_connect()] - Klippy Connection Established
+2025-03-21 15:17:25,564 [server.py:add_log_rollover_item()] - 
+Systemd unit klipper.service:
+unit_name: klipper.service
+is_default: True
+manager: systemd
+Properties:
+**Requires=['sysinit.target', 'system.slice', '-.mount']
+**After=['-.mount', 'basic.target', 'systemd-journald.socket', 'network-online.target', 'system.slice', 'klipper-mcu.service', 'sysinit.target']
+**SupplementaryGroups=[]
+**EnvironmentFiles=/home/om/printer_data/systemd/klipper.env
+**ExecStart=/home/om/klippy-env/bin/python $KLIPPER_ARGS
+**WorkingDirectory=/home/om/klipper
+**FragmentPath=/etc/systemd/system/klipper.service
+**Description=Klipper 3D Printer Firmware SV1
+**User=om
+2025-03-21 15:17:25,818 [server.py:add_log_rollover_item()] - Klipper Version: v0.12.0-85-gd785b396a-dirty
+2025-03-21 15:17:25,834 [klippy_connection.py:_request_initial_subscriptions()] - Webhooks Subscribed
+2025-03-21 15:17:25,836 [klippy_connection.py:_request_initial_subscriptions()] - GCode Output Subscribed
+2025-03-21 15:17:26,086 [job_state.py:_handle_started()] - Job state initialized: standby
+2025-03-21 15:17:26,355 [klippy_connection.py:_check_ready()] - Klippy ready
+2025-03-21 15:17:26,837 [data_store.py:_init_sensors()] - Configuring available sensors: ['heater_bed', 'extruder']
+2025-03-21 15:17:27,264 [announcements.py:_fetch_moonlight()] - Failed to update subscription 'moonraker': [Errno -3] Temporary failure in name resolution
