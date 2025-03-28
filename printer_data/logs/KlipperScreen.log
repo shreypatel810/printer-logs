@@ -61777,3 +61777,307 @@ G0 X412.0 Y250.0 F3000
 2025-03-28 15:08:49,908 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > bed_mesh
 2025-03-28 15:09:11,080 [screen.py:_menu_go_back()] - #### Menu go back
 2025-03-28 15:09:11,111 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 14:52:43,422 [functions.py:log_start()] - --------------------KlipperScreen Log Start--------------------
+2025-03-28 14:52:43,422 [functions.py:log_start()] - KlipperScreen Version: v0.4.5-10-43ad9fc6-dirty
+2025-03-28 14:52:43,422 [functions.py:log_start()] - Python version: 3.9
+2025-03-28 14:52:43,555 [config.py:get_config_file_location()] - Passed config (-c): .
+2025-03-28 14:52:43,555 [config.py:__init__()] - Config path location: /home/om/printer_data/config/KlipperScreen.conf
+2025-03-28 14:52:43,558 [config.py:_include_config()] - Parsing files: ['/home/om/KlipperScreen/config/main_menu.conf']
+2025-03-28 14:52:43,567 [config.py:_include_config()] - Parsing files: ['/home/om/KlipperScreen/config/splash_menu.conf']
+2025-03-28 14:52:43,571 [config.py:_include_config()] - Parsing files: ['/home/om/KlipperScreen/config/print_menu.conf']
+2025-03-28 14:52:43,577 [config.py:_include_config()] - Parsing files: ['/home/om/KlipperScreen/config/move_menu.conf']
+2025-03-28 14:52:43,586 [config.py:log_config()] - ===== Config File =====
+
+=======================
+2025-03-28 14:52:43,587 [config.py:__init__()] - ====== Saved Def ======
+
+[main]
+screen_blanking = off
+screen_blanking_printing = off
+print_sort_dir = size_asc
+print_view = list
+
+=======================
+2025-03-28 14:52:43,588 [config.py:__init__()] - Configured printers: [
+  {
+    "Printer": {
+      "moonraker_host": "127.0.0.1",
+      "moonraker_port": "7125",
+      "moonraker_path": "",
+      "moonraker_ssl": null,
+      "moonraker_api_key": ""
+    }
+  }
+]
+2025-03-28 14:52:43,694 [config.py:create_translations()] - Selected lang: system_lang OS lang: en_GB
+2025-03-28 14:52:43,694 [config.py:install_language()] - Using lang en
+2025-03-28 14:52:43,708 [screen.py:__init__()] - Display for xset: :0
+2025-03-28 14:52:43,709 [screen.py:__init__()] - Screen 0: 800x480
+2025-03-28 14:52:43,709 [screen.py:__init__()] - Monitors: 1 using number: 0
+2025-03-28 14:52:43,709 [screen.py:__init__()] - Wayland: False Display name: :0
+2025-03-28 14:52:43,711 [screen.py:__init__()] - Screen resolution: 800x480
+2025-03-28 14:52:43,828 [KlippyGtk.py:__init__()] - Font size: 17.8 (medium)
+2025-03-28 14:52:44,056 [base_panel.py:battery_percentage()] - Battery information not available.
+2025-03-28 14:52:44,164 [screen.py:set_screenblanking_timeout()] - Screen blanking: off
+2025-03-28 14:52:44,170 [screen.py:initial_connection()] - Default printer: None
+2025-03-28 14:52:44,206 [screen.py:connect_printer()] - Connecting to printer: Printer
+2025-03-28 14:52:44,207 [screen.py:_remove_all_panels()] - Removing all panels
+2025-03-28 14:52:44,239 [screen.py:_load_panel()] - Loading panel: splash_screen
+2025-03-28 14:52:44,276 [screen.py:attach_panel()] - Current panel hierarchy: splash_screen
+2025-03-28 14:52:44,301 [KlippyWebsocket.py:connect()] - Attempting to connect
+2025-03-28 14:52:44,301 [KlippyWebsocket.py:connect()] - Starting websocket thread
+2025-03-28 14:52:44,314 [_logging.py:info()] - Websocket connected
+2025-03-28 14:52:44,314 [KlippyWebsocket.py:on_open()] - Moonraker Websocket Open
+2025-03-28 14:52:44,345 [screen.py:websocket_connected()] - ### websocket_connected
+2025-03-28 14:52:44,378 [KlippyWebsocket.py:identify_client()] - Sending server.connection.identify
+2025-03-28 14:52:44,391 [printer.py:configure_cameras()] - Cameras: []
+2025-03-28 14:52:44,400 [screen.py:init_klipper()] - Moonraker info {'klippy_connected': True, 'klippy_state': 'ready', 'components': ['secrets', 'template', 'klippy_connection', 'jsonrpc', 'internal_transport', 'application', 'websockets', 'dbus_manager', 'database', 'file_manager', 'klippy_apis', 'shell_command', 'machine', 'data_store', 'proc_stats', 'job_state', 'job_queue', 'http_client', 'announcements', 'webcam', 'extensions', 'authorization', 'history', 'octoprint_compat'], 'failed_components': [], 'registered_directories': ['config', 'logs', 'gcodes', 'config_examples', 'docs'], 'warnings': [], 'websocket_count': 1, 'moonraker_version': 'v0.8.0-268-ga23187b', 'missing_klippy_requirements': [], 'api_version': [1, 4, 0], 'api_version_string': '1.4.0'}
+2025-03-28 14:52:44,632 [printer.py:log_counts()] - Klipper version: v0.12.0-85-gd785b396a-dirty
+2025-03-28 14:52:44,633 [printer.py:log_counts()] - # Extruders: 1
+2025-03-28 14:52:44,633 [printer.py:log_counts()] - # Temperature devices: 1
+2025-03-28 14:52:44,633 [printer.py:log_counts()] - # Fans: 1
+2025-03-28 14:52:44,633 [printer.py:log_counts()] - # Output pins: 1
+2025-03-28 14:52:44,633 [printer.py:log_counts()] - # PWM tools: 0
+2025-03-28 14:52:44,633 [printer.py:log_counts()] - # Leds: 0
+2025-03-28 14:52:44,887 [KlippyWebsocket.py:object_subscription()] - Sending printer.objects.subscribe
+2025-03-28 14:52:44,889 [files.py:set_gcodes_path()] - Gcodes path: /home/om/printer_data/gcodes
+2025-03-28 14:52:44,889 [screen.py:init_klipper()] - Printer initialized
+2025-03-28 14:52:44,890 [printer.py:change_state()] - Changing state from 'disconnected' to 'ready'
+2025-03-28 14:52:44,891 [printer.py:change_state()] - Adding callback for state: ready
+2025-03-28 14:52:45,079 [screen.py:set_screenblanking_timeout()] - Screen blanking: off
+2025-03-28 14:52:45,086 [KlippyWebsocket.py:get_file_list()] - Sending server.files.list
+2025-03-28 14:52:45,090 [screen.py:_remove_all_panels()] - Removing all panels
+2025-03-28 14:52:45,129 [screen.py:_load_panel()] - Loading panel: main_menu
+2025-03-28 14:52:47,245 [main_menu.py:__init__()] - ### Making MainMenu
+2025-03-28 14:52:47,250 [main_menu.py:add_device()] - Adding device: extruder
+2025-03-28 14:52:47,256 [main_menu.py:add_device()] - Adding device: heater_bed
+2025-03-28 14:52:47,283 [menu.py:arrangeMenuItems()] - X > gcodes
+2025-03-28 14:52:47,292 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 14:52:47,308 [printer.py:init_temp_store()] - Temp store: ['heater_bed', 'extruder']
+2025-03-28 14:52:47,317 [screen.py:init_tempstore()] - Temperature store size: 1200
+2025-03-28 14:53:02,566 [screen.py:_load_panel()] - Loading panel: temperature
+2025-03-28 14:53:02,577 [temperature.py:add_device()] - Adding device: extruder
+2025-03-28 14:53:02,584 [temperature.py:add_device()] - Adding device: heater_bed
+2025-03-28 14:53:02,611 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > temperature
+2025-03-28 14:53:02,613 [temperature.py:select_heater()] - Selecting extruder
+2025-03-28 14:53:02,613 [temperature.py:select_heater()] - Selecting heater_bed
+2025-03-28 14:53:03,649 [temperature.py:set_temperature()] - {'bed': 60.0, 'extruder': 210.0}
+2025-03-28 14:53:03,649 [temperature.py:set_temperature()] - {'bed': 60.0, 'extruder': 210.0}
+2025-03-28 14:53:03,649 [temperature.py:set_temperature()] - name match extruder
+2025-03-28 14:53:03,649 [KlippyWebsocket.py:set_tool_temp()] - Sending set_tool_temp: M104 T0 S210.0
+2025-03-28 14:53:03,652 [temperature.py:set_temperature()] - {'bed': 60.0, 'extruder': 210.0}
+2025-03-28 14:53:03,652 [temperature.py:set_temperature()] - {'bed': 60.0, 'extruder': 210.0}
+2025-03-28 14:53:03,652 [KlippyWebsocket.py:set_bed_temp()] - Sending set_bed_temp: M140 S60.0
+2025-03-28 14:53:06,553 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 14:53:06,580 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 14:53:09,994 [screen.py:_load_panel()] - Loading panel: home
+2025-03-28 14:53:10,027 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > home
+2025-03-28 14:53:11,798 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G28'}
+2025-03-28 14:53:44,879 [base_panel.py:battery_percentage()] - Battery information not available.
+2025-03-28 14:53:47,751 [screen.py:_send_action()] - printer.gcode.script: {'script': 'Z_TILT_ADJUST'}
+2025-03-28 14:53:51,022 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 14:53:51,050 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 14:54:22,286 [screen.py:_go_to_submenu()] - #### Go to submenu more
+2025-03-28 14:54:22,286 [screen.py:_go_to_submenu()] - #### Menu __main
+2025-03-28 14:54:22,293 [screen.py:_load_panel()] - Loading panel: menu
+2025-03-28 14:54:22,365 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-28 14:54:22,518 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more
+2025-03-28 14:54:22,522 [menu.py:arrangeMenuItems()] - X > more bedlevel
+2025-03-28 14:54:22,532 [menu.py:arrangeMenuItems()] - X > more led
+2025-03-28 14:54:22,541 [menu.py:arrangeMenuItems()] - X > more power
+2025-03-28 14:54:22,544 [menu.py:arrangeMenuItems()] - X > more camera
+2025-03-28 14:54:22,558 [menu.py:arrangeMenuItems()] - X > more spoolman
+2025-03-28 14:54:22,558 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-28 14:54:22,571 [screen.py:_go_to_submenu()] - menu, {{ gettext('More') }}, panel_name=more, items=[{'more bedlevel': {'name': "{{ gettext('Bed Level') }}", 'icon': 'bed-level', 'panel': 'bed_level', 'method': None, 'confirm': None, 'enable': "{{ 'bed_screws' in printer.config_sections or 'screws_tilt_adjust' in printer.config_sections }}", 'params': '{}', 'style': None, 'active': None}}, {'more zoffset': {'name': "{{ gettext('Z Calibrate') }}", 'icon': 'z-farther', 'panel': 'zcalibrate', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more limits': {'name': "{{ gettext('Limits') }}", 'icon': 'fine-tune', 'panel': 'limits', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more fan': {'name': "{{ gettext('Fan') }}", 'icon': 'fan', 'panel': 'fan', 'method': None, 'confirm': None, 'enable': '{{ printer.fans.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more led': {'name': "{{ gettext('Leds') }}", 'icon': 'light', 'panel': 'led', 'method': None, 'confirm': None, 'enable': '{{ printer.leds.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more macros': {'name': "{{ gettext('Macros') }}", 'icon': 'custom-script', 'panel': 'gcode_macros', 'method': None, 'confirm': None, 'enable': '{{ printer.gcode_macros.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more pins': {'name': "{{ gettext('Pins') }}", 'icon': 'hashtag', 'panel': 'pins', 'method': None, 'confirm': None, 'enable': '{{ printer.output_pins.count > 0 or printer.pwm_tools.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more power': {'name': "{{ gettext('Power') }}", 'icon': 'shutdown', 'panel': 'power', 'method': None, 'confirm': None, 'enable': '{{ moonraker.power_devices.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more camera': {'name': "{{ gettext('Camera') }}", 'icon': 'camera', 'panel': 'camera', 'method': None, 'confirm': None, 'enable': '{{ moonraker.cameras.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more console': {'name': "{{ gettext('Console') }}", 'icon': 'console', 'panel': 'console', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more updater': {'name': "{{ gettext('Update') }}", 'icon': 'refresh', 'panel': 'updater', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more input_shaper': {'name': "{{ gettext('Input Shaper') }}", 'icon': 'move', 'panel': 'input_shaper', 'method': None, 'confirm': None, 'enable': "{{ 'input_shaper' in printer.config_sections }}", 'params': '{}', 'style': None, 'active': None}}, {'more save': {'name': "{{ gettext('Save Config') }}", 'icon': 'complete', 'panel': None, 'method': 'printer.gcode.script', 'confirm': "\n{{ gettext('Save configuration?') }}\n\n{{ gettext('Klipper will reboot') }}", 'enable': 'True', 'params': '{"script":"SAVE_CONFIG"}', 'style': None, 'active': None}}, {'more settings': {'name': 'KlipperScreen', 'icon': 'settings', 'panel': 'settings', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more network': {'name': "{{ gettext('Network') }}", 'icon': 'network', 'panel': 'network', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more notifications': {'name': "{{ gettext('Notifications') }}", 'icon': 'notifications', 'panel': 'notifications', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more spoolman': {'name': 'Spoolman', 'icon': 'spoolman', 'panel': 'spoolman', 'method': None, 'confirm': None, 'enable': '{{ moonraker.spoolman }}', 'params': '{}', 'style': None, 'active': None}}, {'more system': {'name': "{{ gettext('System') }}", 'icon': 'info', 'panel': 'system', 'method': None, 'confirm': None, 'enable': '{{ moonraker_connected }}', 'params': '{}', 'style': None, 'active': None}}]
+2025-03-28 14:54:23,562 [screen.py:_load_panel()] - Loading panel: console
+2025-03-28 14:54:23,609 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more > console
+2025-03-28 14:54:27,562 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 14:54:27,602 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more
+2025-03-28 14:54:27,610 [menu.py:arrangeMenuItems()] - X > more bedlevel
+2025-03-28 14:54:27,618 [menu.py:arrangeMenuItems()] - X > more led
+2025-03-28 14:54:27,627 [menu.py:arrangeMenuItems()] - X > more power
+2025-03-28 14:54:27,630 [menu.py:arrangeMenuItems()] - X > more camera
+2025-03-28 14:54:27,643 [menu.py:arrangeMenuItems()] - X > more spoolman
+2025-03-28 14:54:27,644 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-28 14:54:29,937 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 14:54:29,953 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 14:54:30,705 [screen.py:_go_to_submenu()] - #### Go to submenu more
+2025-03-28 14:54:30,705 [screen.py:_go_to_submenu()] - #### Menu __main
+2025-03-28 14:54:30,725 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more
+2025-03-28 14:54:30,732 [menu.py:arrangeMenuItems()] - X > more bedlevel
+2025-03-28 14:54:30,740 [menu.py:arrangeMenuItems()] - X > more led
+2025-03-28 14:54:30,749 [menu.py:arrangeMenuItems()] - X > more power
+2025-03-28 14:54:30,752 [menu.py:arrangeMenuItems()] - X > more camera
+2025-03-28 14:54:30,766 [menu.py:arrangeMenuItems()] - X > more spoolman
+2025-03-28 14:54:30,766 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-28 14:54:30,774 [screen.py:_go_to_submenu()] - menu, {{ gettext('More') }}, panel_name=more, items=[{'more bedlevel': {'name': "{{ gettext('Bed Level') }}", 'icon': 'bed-level', 'panel': 'bed_level', 'method': None, 'confirm': None, 'enable': "{{ 'bed_screws' in printer.config_sections or 'screws_tilt_adjust' in printer.config_sections }}", 'params': '{}', 'style': None, 'active': None}}, {'more zoffset': {'name': "{{ gettext('Z Calibrate') }}", 'icon': 'z-farther', 'panel': 'zcalibrate', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more limits': {'name': "{{ gettext('Limits') }}", 'icon': 'fine-tune', 'panel': 'limits', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more fan': {'name': "{{ gettext('Fan') }}", 'icon': 'fan', 'panel': 'fan', 'method': None, 'confirm': None, 'enable': '{{ printer.fans.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more led': {'name': "{{ gettext('Leds') }}", 'icon': 'light', 'panel': 'led', 'method': None, 'confirm': None, 'enable': '{{ printer.leds.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more macros': {'name': "{{ gettext('Macros') }}", 'icon': 'custom-script', 'panel': 'gcode_macros', 'method': None, 'confirm': None, 'enable': '{{ printer.gcode_macros.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more pins': {'name': "{{ gettext('Pins') }}", 'icon': 'hashtag', 'panel': 'pins', 'method': None, 'confirm': None, 'enable': '{{ printer.output_pins.count > 0 or printer.pwm_tools.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more power': {'name': "{{ gettext('Power') }}", 'icon': 'shutdown', 'panel': 'power', 'method': None, 'confirm': None, 'enable': '{{ moonraker.power_devices.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more camera': {'name': "{{ gettext('Camera') }}", 'icon': 'camera', 'panel': 'camera', 'method': None, 'confirm': None, 'enable': '{{ moonraker.cameras.count > 0 }}', 'params': '{}', 'style': None, 'active': None}}, {'more console': {'name': "{{ gettext('Console') }}", 'icon': 'console', 'panel': 'console', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more updater': {'name': "{{ gettext('Update') }}", 'icon': 'refresh', 'panel': 'updater', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more input_shaper': {'name': "{{ gettext('Input Shaper') }}", 'icon': 'move', 'panel': 'input_shaper', 'method': None, 'confirm': None, 'enable': "{{ 'input_shaper' in printer.config_sections }}", 'params': '{}', 'style': None, 'active': None}}, {'more save': {'name': "{{ gettext('Save Config') }}", 'icon': 'complete', 'panel': None, 'method': 'printer.gcode.script', 'confirm': "\n{{ gettext('Save configuration?') }}\n\n{{ gettext('Klipper will reboot') }}", 'enable': 'True', 'params': '{"script":"SAVE_CONFIG"}', 'style': None, 'active': None}}, {'more settings': {'name': 'KlipperScreen', 'icon': 'settings', 'panel': 'settings', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more network': {'name': "{{ gettext('Network') }}", 'icon': 'network', 'panel': 'network', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more notifications': {'name': "{{ gettext('Notifications') }}", 'icon': 'notifications', 'panel': 'notifications', 'method': None, 'confirm': None, 'enable': 'True', 'params': '{}', 'style': None, 'active': None}}, {'more spoolman': {'name': 'Spoolman', 'icon': 'spoolman', 'panel': 'spoolman', 'method': None, 'confirm': None, 'enable': '{{ moonraker.spoolman }}', 'params': '{}', 'style': None, 'active': None}}, {'more system': {'name': "{{ gettext('System') }}", 'icon': 'info', 'panel': 'system', 'method': None, 'confirm': None, 'enable': '{{ moonraker_connected }}', 'params': '{}', 'style': None, 'active': None}}]
+2025-03-28 14:54:32,185 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more > console
+2025-03-28 14:54:38,578 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 14:54:38,617 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > more
+2025-03-28 14:54:38,631 [menu.py:arrangeMenuItems()] - X > more bedlevel
+2025-03-28 14:54:38,650 [menu.py:arrangeMenuItems()] - X > more led
+2025-03-28 14:54:38,660 [menu.py:arrangeMenuItems()] - X > more power
+2025-03-28 14:54:38,663 [menu.py:arrangeMenuItems()] - X > more camera
+2025-03-28 14:54:38,676 [menu.py:arrangeMenuItems()] - X > more spoolman
+2025-03-28 14:54:38,676 [menu.py:evaluate_enable()] - moonraker connected True
+2025-03-28 14:54:38,949 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 14:54:38,964 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 14:54:41,854 [screen.py:_load_panel()] - Loading panel: bed_mesh
+2025-03-28 14:54:41,873 [bed_mesh.py:add_profile()] - Adding Profile: default
+2025-03-28 14:54:41,889 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > bed_mesh
+2025-03-28 14:54:41,890 [bed_mesh.py:activate_mesh()] - Active None changing to default
+2025-03-28 14:54:50,786 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 14:54:50,814 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 14:54:55,114 [screen.py:_load_panel()] - Loading panel: gcodes
+2025-03-28 14:54:55,131 [gcodes.py:__init__()] - Thumbsize: 122.66666666666666
+2025-03-28 14:54:55,133 [gcodes.py:__init__()] - list
+2025-03-28 14:54:55,137 [KlippyWebsocket.py:get_dir_info()] - Sending server.files.get_directory  gcodes
+2025-03-28 14:54:55,148 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > gcodes
+2025-03-28 14:54:55,199 [gcodes.py:load_files()] - Loaded in 0.046 seconds
+2025-03-28 14:55:20,288 [KlippyGtk.py:Dialog()] - Showing dialog Print BX700_YACS_0.6.gcode (width=800, height=480)
+2025-03-28 14:55:25,854 [KlippyGtk.py:remove_dialog()] - Removing Dialog
+2025-03-28 14:55:28,043 [KlippyGtk.py:Dialog()] - Showing dialog Print BX700_YACS_0.6.gcode (width=800, height=480)
+2025-03-28 14:55:29,034 [KlippyGtk.py:remove_dialog()] - Removing Dialog
+2025-03-28 14:55:29,034 [gcodes.py:confirm_print_response()] - Starting print: BX700_YACS_0.6.gcode
+2025-03-28 14:55:29,034 [KlippyWebsocket.py:print_start()] - Sending printer.print.start
+2025-03-28 14:55:29,123 [printer.py:change_state()] - Changing state from 'ready' to 'printing'
+2025-03-28 14:55:29,123 [printer.py:change_state()] - Adding callback for state: printing
+2025-03-28 14:55:29,143 [screen.py:set_screenblanking_timeout()] - Screen blanking: off
+2025-03-28 14:55:29,153 [screen.py:_remove_all_panels()] - Removing all panels
+2025-03-28 14:55:29,196 [screen.py:_load_panel()] - Loading panel: job_status
+2025-03-28 14:55:29,324 [screen.py:attach_panel()] - Current panel hierarchy: job_status
+2025-03-28 14:55:29,330 [job_status.py:set_state()] - Changing job_status state from 'standby' to 'printing'
+2025-03-28 14:55:29,341 [job_status.py:update_filename()] - Updating filename to BX700_YACS_0.6.gcode
+2025-03-28 14:55:29,342 [job_status.py:_update_file_metadata()] - Update Metadata. File: BX700_YACS_0.6.gcode Size: 615030
+2025-03-28 14:55:29,352 [job_status.py:show_file_thumbnail()] - no pixbuf
+2025-03-28 14:56:09,723 [KlippyGtk.py:Dialog()] - Showing dialog Cancel (width=800, height=480)
+2025-03-28 14:56:16,770 [KlippyGtk.py:remove_dialog()] - Removing Dialog
+2025-03-28 14:56:19,610 [screen.py:_load_panel()] - Loading panel: fine_tune
+2025-03-28 14:56:19,658 [screen.py:attach_panel()] - Current panel hierarchy: job_status > fine_tune
+2025-03-28 14:56:32,214 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 14:56:39,574 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 14:57:06,656 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 14:57:35,729 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 14:58:04,506 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 14:58:33,275 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 14:59:01,901 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 14:59:19,454 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 14:59:19,486 [screen.py:attach_panel()] - Current panel hierarchy: job_status
+2025-03-28 14:59:21,158 [KlippyGtk.py:Dialog()] - Showing dialog Cancel (width=800, height=480)
+2025-03-28 14:59:23,054 [KlippyGtk.py:remove_dialog()] - Removing Dialog
+2025-03-28 14:59:23,055 [job_status.py:cancel_confirm()] - Canceling print
+2025-03-28 14:59:23,056 [job_status.py:set_state()] - Changing job_status state from 'printing' to 'cancelling'
+2025-03-28 14:59:23,059 [KlippyWebsocket.py:print_cancel()] - Sending printer.print.cancel
+2025-03-28 14:59:23,495 [printer.py:change_state()] - Changing state from 'printing' to 'ready'
+2025-03-28 14:59:23,495 [printer.py:change_state()] - Adding callback for state: ready
+2025-03-28 14:59:23,504 [job_status.py:set_state()] - Changing job_status state from 'cancelling' to 'cancelled'
+2025-03-28 14:59:23,543 [screen.py:set_screenblanking_timeout()] - Screen blanking: off
+2025-03-28 14:59:54,881 [job_status.py:close_panel()] - Closing job_status panel
+2025-03-28 14:59:54,881 [KlippyWebsocket.py:get_file_list()] - Sending server.files.list
+2025-03-28 14:59:54,884 [screen.py:_remove_all_panels()] - Removing all panels
+2025-03-28 14:59:54,919 [screen.py:show_panel()] - Reinitializing panel main_menu
+2025-03-28 14:59:55,014 [main_menu.py:__init__()] - ### Making MainMenu
+2025-03-28 14:59:55,019 [main_menu.py:add_device()] - Adding device: extruder
+2025-03-28 14:59:55,024 [main_menu.py:add_device()] - Adding device: heater_bed
+2025-03-28 14:59:55,048 [menu.py:arrangeMenuItems()] - X > gcodes
+2025-03-28 14:59:55,057 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 15:00:08,450 [screen.py:show_panel()] - Reinitializing panel temperature
+2025-03-28 15:00:08,457 [warnings.py:_showwarnmsg()] - /home/om/KlipperScreen/panels/temperature.py:24: Warning: ../../../gobject/gsignal.c:2732: instance '0x29cd6b00' has no handler with id '1026'
+  self.long_press = {}
+
+2025-03-28 15:00:08,458 [warnings.py:_showwarnmsg()] - /home/om/KlipperScreen/panels/temperature.py:24: Warning: ../../../gobject/gsignal.c:2732: instance '0x29a9a7a0' has no handler with id '1053'
+  self.long_press = {}
+
+2025-03-28 15:00:08,464 [temperature.py:add_device()] - Adding device: extruder
+2025-03-28 15:00:08,469 [temperature.py:add_device()] - Adding device: heater_bed
+2025-03-28 15:00:08,495 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > temperature
+2025-03-28 15:00:08,496 [temperature.py:select_heater()] - Selecting extruder
+2025-03-28 15:00:08,497 [temperature.py:select_heater()] - Selecting heater_bed
+2025-03-28 15:00:09,049 [temperature.py:set_temperature()] - {'bed': 60.0, 'extruder': 210.0}
+2025-03-28 15:00:09,049 [temperature.py:set_temperature()] - {'bed': 60.0, 'extruder': 210.0}
+2025-03-28 15:00:09,049 [temperature.py:set_temperature()] - name match extruder
+2025-03-28 15:00:09,049 [KlippyWebsocket.py:set_tool_temp()] - Sending set_tool_temp: M104 T0 S210.0
+2025-03-28 15:00:09,050 [temperature.py:set_temperature()] - {'bed': 60.0, 'extruder': 210.0}
+2025-03-28 15:00:09,050 [temperature.py:set_temperature()] - {'bed': 60.0, 'extruder': 210.0}
+2025-03-28 15:00:09,050 [KlippyWebsocket.py:set_bed_temp()] - Sending set_bed_temp: M140 S60.0
+2025-03-28 15:00:09,884 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 15:00:09,900 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 15:00:13,110 [screen.py:show_panel()] - Reinitializing panel home
+2025-03-28 15:00:13,142 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > home
+2025-03-28 15:00:14,285 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G28'}
+2025-03-28 15:01:01,657 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 15:01:01,684 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 15:01:08,974 [screen.py:show_panel()] - Reinitializing panel gcodes
+2025-03-28 15:01:08,988 [gcodes.py:__init__()] - Thumbsize: 122.66666666666666
+2025-03-28 15:01:08,991 [gcodes.py:__init__()] - list
+2025-03-28 15:01:08,996 [KlippyWebsocket.py:get_dir_info()] - Sending server.files.get_directory  gcodes
+2025-03-28 15:01:09,007 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > gcodes
+2025-03-28 15:01:09,055 [gcodes.py:load_files()] - Loaded in 0.044 seconds
+2025-03-28 15:01:11,392 [KlippyGtk.py:Dialog()] - Showing dialog Print BX700_YACS_0.6.gcode (width=800, height=480)
+2025-03-28 15:01:11,963 [KlippyGtk.py:remove_dialog()] - Removing Dialog
+2025-03-28 15:01:11,963 [gcodes.py:confirm_print_response()] - Starting print: BX700_YACS_0.6.gcode
+2025-03-28 15:01:11,963 [KlippyWebsocket.py:print_start()] - Sending printer.print.start
+2025-03-28 15:01:12,016 [printer.py:change_state()] - Changing state from 'ready' to 'printing'
+2025-03-28 15:01:12,017 [printer.py:change_state()] - Adding callback for state: printing
+2025-03-28 15:01:12,033 [screen.py:set_screenblanking_timeout()] - Screen blanking: off
+2025-03-28 15:01:12,042 [screen.py:_remove_all_panels()] - Removing all panels
+2025-03-28 15:01:12,077 [screen.py:show_panel()] - Reinitializing panel job_status
+2025-03-28 15:01:12,165 [screen.py:attach_panel()] - Current panel hierarchy: job_status
+2025-03-28 15:01:12,171 [job_status.py:set_state()] - Changing job_status state from 'standby' to 'printing'
+2025-03-28 15:01:12,177 [job_status.py:update_filename()] - Updating filename to BX700_YACS_0.6.gcode
+2025-03-28 15:01:12,178 [job_status.py:_update_file_metadata()] - Update Metadata. File: BX700_YACS_0.6.gcode Size: 615030
+2025-03-28 15:01:12,189 [job_status.py:show_file_thumbnail()] - no pixbuf
+2025-03-28 15:02:07,876 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 15:02:08,994 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 15:02:27,487 [printer.py:change_state()] - Changing state from 'printing' to 'paused'
+2025-03-28 15:02:27,487 [printer.py:change_state()] - Adding callback for state: paused
+2025-03-28 15:02:27,493 [job_status.py:set_state()] - Changing job_status state from 'printing' to 'paused'
+2025-03-28 15:02:27,523 [screen.py:set_screenblanking_timeout()] - Screen blanking: off
+2025-03-28 15:02:27,530 [screen.py:show_panel()] - Panel is already is in view
+2025-03-28 15:02:27,532 [screen.py:_load_panel()] - Loading panel: extrude
+2025-03-28 15:02:27,583 [screen.py:attach_panel()] - Current panel hierarchy: job_status > extrude
+2025-03-28 15:02:27,585 [KlippyWebsocket.py:gcode_script()] - Sending printer.gcode.script: SET_FILAMENT_SENSOR SENSOR=encoder_sensor ENABLE=1
+2025-03-28 15:02:51,279 [extrude.py:change_distance()] - ### Distance 15
+2025-03-28 15:02:52,761 [KlippyWebsocket.py:gcode_script()] - Sending printer.gcode.script: M83
+2025-03-28 15:02:52,765 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G1 E-15 F120'}
+2025-03-28 15:03:05,430 [KlippyWebsocket.py:gcode_script()] - Sending printer.gcode.script: M83
+2025-03-28 15:03:05,433 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G1 E-15 F120'}
+2025-03-28 15:03:55,157 [KlippyWebsocket.py:gcode_script()] - Sending printer.gcode.script: M83
+2025-03-28 15:03:55,159 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G1 E+15 F120'}
+2025-03-28 15:04:13,902 [KlippyWebsocket.py:gcode_script()] - Sending printer.gcode.script: M83
+2025-03-28 15:04:13,903 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G1 E+15 F120'}
+2025-03-28 15:04:31,197 [KlippyWebsocket.py:gcode_script()] - Sending printer.gcode.script: M83
+2025-03-28 15:04:31,198 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G1 E+15 F120'}
+2025-03-28 15:04:39,573 [KlippyWebsocket.py:gcode_script()] - Sending printer.gcode.script: M83
+2025-03-28 15:04:39,575 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G1 E+15 F120'}
+2025-03-28 15:04:49,837 [screen.py:_menu_go_back()] - #### Menu go back
+2025-03-28 15:04:49,867 [screen.py:attach_panel()] - Current panel hierarchy: job_status
+2025-03-28 15:04:52,412 [KlippyWebsocket.py:print_resume()] - Sending printer.print.resume
+2025-03-28 15:04:53,153 [printer.py:change_state()] - Changing state from 'paused' to 'printing'
+2025-03-28 15:04:53,154 [printer.py:change_state()] - Adding callback for state: printing
+2025-03-28 15:04:53,162 [job_status.py:set_state()] - Changing job_status state from 'paused' to 'printing'
+2025-03-28 15:04:53,192 [screen.py:set_screenblanking_timeout()] - Screen blanking: off
+2025-03-28 15:04:53,198 [screen.py:show_panel()] - Panel is already is in view
+2025-03-28 15:05:11,730 [screen.py:show_popup_message()] - error: // Unknown command:"M205"
+2025-03-28 15:05:34,344 [KlippyGtk.py:Dialog()] - Showing dialog Cancel (width=800, height=480)
+2025-03-28 15:05:35,681 [KlippyGtk.py:remove_dialog()] - Removing Dialog
+2025-03-28 15:05:35,681 [job_status.py:cancel_confirm()] - Canceling print
+2025-03-28 15:05:35,685 [job_status.py:set_state()] - Changing job_status state from 'printing' to 'cancelling'
+2025-03-28 15:05:35,690 [KlippyWebsocket.py:print_cancel()] - Sending printer.print.cancel
+2025-03-28 15:05:40,762 [printer.py:change_state()] - Changing state from 'printing' to 'ready'
+2025-03-28 15:05:40,762 [printer.py:change_state()] - Adding callback for state: ready
+2025-03-28 15:05:40,772 [job_status.py:set_state()] - Changing job_status state from 'cancelling' to 'cancelled'
+2025-03-28 15:05:40,798 [screen.py:set_screenblanking_timeout()] - Screen blanking: off
+2025-03-28 15:05:42,014 [job_status.py:close_panel()] - Closing job_status panel
+2025-03-28 15:05:42,014 [KlippyWebsocket.py:get_file_list()] - Sending server.files.list
+2025-03-28 15:05:42,020 [screen.py:_remove_all_panels()] - Removing all panels
+2025-03-28 15:05:42,067 [screen.py:show_panel()] - Reinitializing panel main_menu
+2025-03-28 15:05:42,188 [main_menu.py:__init__()] - ### Making MainMenu
+2025-03-28 15:05:42,193 [main_menu.py:add_device()] - Adding device: extruder
+2025-03-28 15:05:42,198 [main_menu.py:add_device()] - Adding device: heater_bed
+2025-03-28 15:05:42,223 [menu.py:arrangeMenuItems()] - X > gcodes
+2025-03-28 15:05:42,232 [screen.py:attach_panel()] - Current panel hierarchy: main_menu
+2025-03-28 15:05:44,766 [screen.py:show_panel()] - Reinitializing panel home
+2025-03-28 15:05:44,798 [screen.py:attach_panel()] - Current panel hierarchy: main_menu > home
+2025-03-28 15:05:46,565 [screen.py:_send_action()] - printer.gcode.script: {'script': 'G28'}
+                                                                                                                                                                
